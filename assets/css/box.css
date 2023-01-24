@@ -1,0 +1,27 @@
+.box {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    padding: 2vw;
+    background-color: #FFEAEA;
+    margin: 50px;
+    }
+
+.box p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.box h1 {
+    font-family: monatha;
+    display: flex;
+    justify-content: center;
+}
+
+.box ul li {
+    list-style-type: decimal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 50px;
+    font-size: 20px;
+}
