@@ -133,6 +133,375 @@
 	  opacity: 0;
 	}
   }
+  .carosello > *:nth-child(6) {
+	animation: fade6 40s infinite;
+  }
+  @keyframes fade6 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(7) {
+	animation: fade7 40s infinite;
+  }
+  @keyframes fade7 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(8) {
+	animation: fade8 40s infinite;
+  }
+  @keyframes fade8 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(9) {
+	animation: fade9 40s infinite;
+  }
+  @keyframes fade9 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(10) {
+	animation: fade10 40s infinite;
+  }
+  @keyframes fade10 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(11) {
+	animation: fade11 40s infinite;
+  }
+  @keyframes fade11 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(12) {
+	animation: fade12 40s infinite;
+  }
+  @keyframes fade12 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(13) {
+	animation: fade13 40s infinite;
+  }
+  @keyframes fade13 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(14) {
+	animation: fade14 40s infinite;
+  }
+  @keyframes fade14 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(15) {
+	animation: fade15 40s infinite;
+  }
+  @keyframes fade15 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(16) {
+	animation: fade16 40s infinite;
+  }
+  @keyframes fade16 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(17) {
+	animation: fade17 40s infinite;
+  }
+  @keyframes fade17 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(18) {
+	animation: fade18 40s infinite;
+  }
+  @keyframes fade18 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(19) {
+	animation: fade19 40s infinite;
+  }
+  @keyframes fade19 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(20) {
+	animation: fade20 40s infinite;
+  }
+  @keyframes fade20 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(21) {
+	animation: fade21 40s infinite;
+  }
+  @keyframes fade21 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+
   @keyframes glow {
 	from {
 	  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #800080,
