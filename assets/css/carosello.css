@@ -501,6 +501,420 @@
 	  opacity: 0;
 	}
   }
+  .carosello > *:nth-child(22) {
+	animation: fade22 40s infinite;
+  }
+  @keyframes fade22 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(23) {
+	animation: fade23 40s infinite;
+  }
+  @keyframes fade23 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(24) {
+	animation: fade24 40s infinite;
+  }
+  @keyframes fade24 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(25) {
+	animation: fade25 40s infinite;
+  }
+  @keyframes fade25 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(26) {
+	animation: fade26 40s infinite;
+  }
+  @keyframes fade26 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(27) {
+	animation: fade27 40s infinite;
+  }
+  @keyframes fade27 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(28) {
+	animation: fade28 40s infinite;
+  }
+  @keyframes fade28 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(29) {
+	animation: fade29 40s infinite;
+  }
+  @keyframes fade29 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(30) {
+	animation: fade30 40s infinite;
+  }
+  @keyframes fade30 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(31) {
+	animation: fade31 40s infinite;
+  }
+  @keyframes fade31 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(32) {
+	animation: fade32 40s infinite;
+  }
+  @keyframes fade32 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(33) {
+	animation: fade33 40s infinite;
+  }
+  @keyframes fade33 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(34) {
+	animation: fade34 40s infinite;
+  }
+  @keyframes fade34 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(35) {
+	animation: fade35 40s infinite;
+  }
+  @keyframes fade35 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(36) {
+	animation: fade36 40s infinite;
+  }
+  @keyframes fade36 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(37) {
+	animation: fade37 40s infinite;
+  }
+  @keyframes fade37 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(38) {
+	animation: fade38 40s infinite;
+  }
+  @keyframes fade38 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  .carosello > *:nth-child(39) {
+	animation: fade39 40s infinite;
+  }
+  @keyframes fade39 {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	60% {
+	  opacity: 0;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
 
   @keyframes glow {
 	from {
