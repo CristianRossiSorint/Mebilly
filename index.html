@@ -4,8 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="test">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9381192201006311"
-    crossorigin="anonymous"></script>
   <meta name="keywords"
     content="unghie, nails, estetica, Milano, Legnano, massaggi, terapie, bellezza, smalti, uomo, donna, femminile, glitter, brillantini">
   <meta name="author" content="Mebilly Beauty">
@@ -18,20 +16,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/flexbox.css">
   <script src="assets/js/listino-prezzi_show-hide.js"></script>
+  <script src="assets/js/menu.js"></script>
   <link rel="icon" type="image/x-icon" href="media/img/logo.jpg">
   <title>Mebilly Beauty</title>
 </head>
 
 <body>
   <header>
-    <nav id="menu">
-      <a href="#posizione">Dove siamo</a>
-      <a href="#orari">Orari</a>
-      <img width="120vw" class="logo" src="media/img/logo.jpg">
-      <a href="approfondimenti.html">Approfondimenti</a>
-      <a href="galleria.html">Galleria</a>
-      <a href="#contatti">Contatti</a>
-
+    <nav class="menu">
+      <div class="menu-items desktop">
+        <a href="#posizione">Dove siamo</a>
+        <a href="#orari">Orari</a>
+      </div>
+      <div class="menu-logo">
+        <img width="120vw" class="logo" src="media/img/logo.jpg" alt="logo">
+      </div>
+      <div class="menu-items desktop">
+        <a href="approfondimenti.html">Approfondimenti</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <div class="menu-items mobile">
+        <a href="#posizione">Dove siamo</a>
+        <a href="#orari">Orari</a>
+        <a href="approfondimenti.html">Approfondimenti</a>
+        <a href="galleria.html">Galleria</a>
+        <a href="#contatti">Contatti</a>
+      </div>
     </nav>
   </header>
   <main>
