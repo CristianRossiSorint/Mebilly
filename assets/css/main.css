@@ -81,7 +81,8 @@ table td:nth-child(1) {
 table td:nth-child(2) {
   text-align: right;
   width: 30%;
-  padding-right: 5%;
+  padding-left: 10%;
+  text-align: left;
 }
 
 
