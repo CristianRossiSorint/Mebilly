@@ -1,31 +1,72 @@
 /******==CSS RESET==*******/
-html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,hr {
+html,
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+fieldset,
+input,
+hr {
   margin: 0;
   padding: 0;
 }
-h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+address,
+caption,
+cite,
+code,
+em,
+strong,
+th {
   font-size: 1em;
   overflow: hidden;
   font-weight: normal;
   font-style: normal;
 }
+
 ul,
 ol {
   list-style: none;
 }
+
 fieldset,
 img,
 hr {
   border: none;
 }
+
 caption,
 th {
   text-align: left;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 td {
   vertical-align: top;
 }
@@ -37,46 +78,88 @@ td {
   font-family: ragiel;
   src: url("../fonts/ragiel/Ragiel.otf") format("opentype");
 }
+
 @font-face {
   font-family: ragiel-bold;
   src: url("../fonts/ragiel/Ragiel\ Bold.otf") format("opentype");
 }
+
 @font-face {
   font-family: monatha;
   src: url("../fonts/monatha/Monatha.ttf") format("opentype");
 }
 
 
-h1, h2, p, a {font-family: monatha;}
+h1,
+h2,
+p,
+a {
+  font-family: monatha;
+}
 
-h1 {font-size: 45px;}
-h2 {font-size: 50px; text-align:center; padding: 0 0 40px 0; text-decoration-line: underline;}
-	p {font-size: 27px; text-align:center;}
-td,th, b {font-size: 30px;}
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  padding: 0 0 40px 0;
+  text-decoration-line: underline;
+}
+
+p {
+  font-size: 27px;
+  text-align: center;
+}
+
+td,
+th,
+b {
+  font-size: 30px;
+}
 
 /*MOBILE*/
 
-@media(max-width: 767px){
+@media(max-width: 767px) {
 
-h2 {font-size: 25px; text-align:center; padding: 15px;}
-td,th, b {font-size: 20px;}
-	p {font-size: 18px;}
-	
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  td,
+  th,
+  b {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
 }
 
 
 
 /******==GENERAL LAYOUT==*******/
-html {scroll-behavior: smooth;}
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #FFC3C2;
 }
 
-header,nav,section,footer {
+header,
+nav,
+section,
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 a {
@@ -89,50 +172,65 @@ a:hover {
 }
 
 .container {
-	width:80%;
-	max-width: 1920px;
-	display:inherit;
-	}
-	
-	
-/**Mobile**/	
-  @media(max-width:767px) {
-	.container {
-	width:100%;
-	}}
-  
-  
+  width: 80%;
+  max-width: 1920px;
+  display: inherit;
+}
+
+
+/**Mobile**/
+@media(max-width:767px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
 
 /******==CUSTOM LAYOUT==*******/
 
+.logo {
+  border-radius: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width:630px) {
   .logo {
-    border-radius: 50%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
   }
+}
 
-  @media screen and (max-width:630px) {
-    .logo {
-      margin-left: 30%;
-      margin-right: 30%;
-    }
+#carosello .container,
+#listino-prezzi .container,
+#posizione .container,
+#descrizione .container,
+#orari .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#carosello .container {
+  width: 100%;
+  height: 800px;
+}
+
+@media(max-width:767px) {
+  #carosello .container {
+    width: 100%;
+    height: 400px;
   }
+}
 
-  #carosello .container,
-  #listino-prezzi .container, 
-  #posizione .container, 
-  #descrizione .container, 
-  #orari .container{ 
-  flex-direction:column; justify-content: center; align-items:center; 
-  }
+.descrizione {
+  font-family: monatha;
+  text-align: center;
+  font-size: 300%
+}
 
-  #carosello .container {width: 100%; height: 800px;}
-  
-  @media(max-width:767px) {#carosello .container {width: 100%; height: 400px;}}
-  
-  .descrizione { font-family: monatha; text-align:center; font-size: 300%}
-  
-  
+
 /******==GENERAL PADDING FOR EACH SECTION==*******/
 
 
@@ -142,18 +240,20 @@ section:not(:first-child) {
 
 /**Mobile**/
 @media(max-width:767px) {
-	section:not(:first-child, :last-child){
-		padding:20px 15px}
-		}
-		
-		
-		
+  section:not(:first-child, :last-child) {
+    padding: 20px 15px
+  }
+}
+
+
+
 /******MENU******/
 
 #menu {
   background-color: #F594A3;
   width: 100%;
 }
+
 #menu a {
   padding: 14px 20px;
   color: #FFE5D9;
@@ -164,6 +264,7 @@ section:not(:first-child) {
   font-size: 32px;
   border-radius: 50%;
 }
+
 #menu a:hover {
   background-color: #FFE5D9;
   color: #000;
@@ -172,20 +273,31 @@ section:not(:first-child) {
 
 /******==TABLES general==******/
 
-table {width: 100%;}
-th,td {padding: 20px;}
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
 tr:nth-child(even) {
-    background-color: #FFE5D9;
-  }
+  background-color: #FFE5D9;
+}
 
 /*mobile*/
-@media(max-width:767px){
-	th,td
- {padding: 20px;}}
- 
- /******== CUSTOM TABLES==******/
+@media(max-width:767px) {
 
- .orari-tabella th {
+  th,
+  td {
+    padding: 20px;
+  }
+}
+
+/******== CUSTOM TABLES==******/
+
+.orari-tabella th {
   background-color: #F594A3;
   color: #FFC3C2;
   padding-right: 50px;
@@ -198,45 +310,47 @@ tr:nth-child(even) {
 }
 
 #listino-prezzi table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 0 auto;
-    display:none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.sezioni-link {width: 100%;}
-  
-.sezioni {
-    background-color: #F594A3;
-    color: #FFE5D9;
-    text-align: center;
-    flex-wrap: wrap;
-    display: flex;
-    padding:20px;
-    font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .sezioni-link {
-    text-decoration: none;
+  width: 100%;
+}
+
+.sezioni {
+  background-color: #F594A3;
+  color: #FFE5D9;
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sezioni-link {
+  text-decoration: none;
 }
 
 .sezioni:hover {
-    background-color: #FFE5D9;
-    color: #000;
+  background-color: #FFE5D9;
+  color: #000;
 }
 
 
- /******== IFRAME==******/
+/******== IFRAME==******/
 
 
 .mappe {
-	width: 100%;
+  width: 100%;
   max-width: 600px;
   height: 450px;
   padding-top: 20px;
   border: 0;
-  
+
 }
 
 /******CLICK TO TOP******/
@@ -257,9 +371,21 @@ tr:nth-child(even) {
   background: #000;
 }
 
-.torna-su:hover{
+.torna-su:hover {
   font-size: 300%;
 }
 
-footer {padding: 0 0 50px 0;border-bottom: solid 10px #FFC3C2;}
+footer {
+  padding: 0 0 50px 0;
+  border-bottom: solid 10px #FFC3C2;
+}
 
+.banner {
+  width: 30em;
+}
+
+@media only screen and (max-width: 300px) {
+  img {
+      width: 10em;
+  }
+}
