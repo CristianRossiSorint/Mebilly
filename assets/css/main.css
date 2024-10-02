@@ -317,7 +317,7 @@ section:not(:first-child) {
     display: block;
     background-color: transparent;
     border: none;
-    font-size: 36px;
+    font-size: 5em;
     color: #FFE5D9;
     cursor: pointer;
     margin: 10px 0;
@@ -342,8 +342,9 @@ section:not(:first-child) {
   .menu-items a {
     text-align: center;
     padding: 10px;
-    font-size: 24px;
+    font-size: 3em;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .menu-items a:hover {
@@ -365,7 +366,6 @@ section:not(:first-child) {
     display: none;
   }
 
-  
 }
 
 /******==TABLES general==******/
