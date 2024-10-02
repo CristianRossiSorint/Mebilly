@@ -307,7 +307,7 @@ section:not(:first-child) {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .menu {
     flex-direction: column;
     align-items: center;
@@ -364,6 +364,8 @@ section:not(:first-child) {
   .menu-items.desktop {
     display: none;
   }
+
+  
 }
 
 /******==TABLES general==******/
