@@ -1,481 +1,390 @@
-<!DOCTYPE html>
-<html>
+<style>
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--pink-main);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        #menu-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .menu {
+            width: 100%;
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            gap: 30px;
+        }
+
+        .menu-left {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start;
+        }
+
+        .menu-right {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+        }
+
+        .menu-logo {
+            justify-self: center;
+        }
+
+        .menu-logo img {
+            width: 110px;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(139, 74, 74, 0.2);
+            flex-shrink: 0;
+        }
+
+        .menu-left, .menu-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-left a, .menu-right a {
+            font-family: monatha;
+            font-size: 28px;
+            padding: 12px 22px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-left a:hover, .menu-right a:hover {
+            background: var(--pink-main);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style><!DOCTYPE html>
+<html lang="it">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="test">
-  <meta name="keywords"
-    content="unghie, nails, estetica, Milano, Legnano, massaggi, terapie, bellezza, smalti, uomo, donna, femminile, glitter, brillantini">
-  <meta name="author" content="Mebilly Beauty">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/carosello.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/social.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/flexbox.css">
-  <script src="assets/js/listino-prezzi_show-hide.js"></script>
-  <script src="assets/js/menu.js"></script>
-  <link rel="icon" type="image/x-icon" href="media/img/logo.jpg">
-  <title>Mebilly Beauty</title>
+    <meta charset="utf-8">
+    <meta name="description" content="test">
+    <meta name="keywords" content="unghie, nails, estetica, Milano, Legnano, massaggi, terapie, bellezza, smalti, uomo, donna, femminile, glitter, brillantini">
+    <meta name="author" content="Mebilly Beauty">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/carosello.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/social.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/flexbox.css">
+    <script src="assets/js/listino-prezzi_show-hide.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <link rel="icon" type="image/x-icon" href="media/img/logo.jpg">
+    <title>Mebilly Beauty</title>
 </head>
 
 <body>
-  <header>
-    <nav class="menu">
-      <div class="menu-items desktop">
-        <a href="#posizione">Dove siamo</a>
-        <a href="#orari">Orari</a>
-      </div>
-      <div class="menu-logo">
-        <img width="120vw" class="logo" src="media/img/logo.jpg" alt="logo">
-      </div>
-      <div class="menu-items desktop">
-        <a href="approfondimenti.html">Approfondimenti</a>
-        <a href="galleria.html">Galleria</a>
-        <a href="#contatti">Contatti</a>
-      </div>
-      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
-      <div class="menu-items mobile">
-        <a href="#posizione">Dove siamo</a>
-        <a href="#orari">Orari</a>
-        <a href="approfondimenti.html">Approfondimenti</a>
-        <a href="galleria.html">Galleria</a>
-        <a href="#contatti">Contatti</a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="carosello">
-      <div class="carosello-container">
-        <img src="media/img/unghie-trasparenti.jpg" class="active">
-        <img src="media/img/unghie-rosse3.jpg">
-        <img src="media/img/unghie-blu1.jpg">
-        <img src="media/img/unghie-blu2.jpg">
-        <img src="media/img/unghie-blu3.jpg">
-        <img src="media/img/unghie-blu4.jpg">
-        <img src="media/img/unghie-nere1.jpg">
-        <img src="media/img/unghie-bianche.jpg">
-        <img src="media/img/unghie-bianche2.jpg">
-        <img src="media/img/unghie-bianche3.jpg">
-        <img src="media/img/unghie-viola1.jpg">
-        <img src="media/img/unghie-viola2.jpg">
-        <img src="media/img/unghie-viola3.jpg">
-        <img src="media/img/unghie-viola4.jpg">
-        <img src="media/img/unghie-viola5.jpg">
-        <img src="media/img/unghie-rosse6.jpg">
-        <img src="media/img/unghie-pastello.jpg">
-        <img src="media/img/unghie-rosse1.jpg">
-        <img src="media/img/unghie-rosse2.jpg">
-        <img src="media/img/unghie-rosse3.jpg">
-        <img src="media/img/unghie-rosse4.jpg">
-        <img src="media/img/unghie-rosse5.jpg">
-        <img src="media/img/unghie-rosse6.jpg">
-        <img src="media/img/unghie-rosse7.jpg">
-        <img src="media/img/unghie-rosse8.jpg">
-        <img src="media/img/unghie-rosa1.jpg">
-        <img src="media/img/unghie-rosa2.jpg">
-        <img src="media/img/unghie-rosa3.jpg">
-        <img src="media/img/unghie-rosa4.jpg">
-        <img src="media/img/unghie-rosa5.jpg">
-        <img src="media/img/unghie-rosa6.jpg">
-        <img src="media/img/unghie-rosa7.jpg">
-        <img src="media/img/unghie-rosa8.jpg">
-        <img src="media/img/unghie-rosa9.jpg">
-        <img src="media/img/unghie-rosa10.jpg">
-        <img src="media/img/unghie-rosa11.jpg">
-        <img src="media/img/unghie-rosa12.jpg">
-        <img src="media/img/unghie-rosa13.jpg">
-        <img src="media/img/unghie-argento.jpg">
-        <!--<h1 class="btn">MEBILLY BEAUTY</h1>-->
-      </div>
-      <script src="assets/js/carosello.js"></script>
-    </section>
+    <header>
+        <div id="menu-container">
+            <nav class="menu">
+            <div class="menu-left">
+                <a href="#posizione">Dove siamo</a>
+                <a href="#orari">Orari</a>
+            </div>
 
-    <section id="">
-      <img class="banner" src="media/img/banner-epilazione-laser-diodo.jpg" alt="banner">
-    </section>
+            <div class="menu-logo">
+                <img class="logo" src="media/img/logo.jpg" alt="logo">
+            </div>
 
-    <section id="listino-prezzi">
-      <div class="container">
-        <h2>Listino prezzi</h2>
+            <div class="menu-right">
+                <a href="approfondimenti.html">Approfondimenti</a>
+                <a href="galleria.html">Galleria</a>
+                <a href="#contatti">Contatti</a>
+            </div>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('donna')" href="javascript:void(0);">
-          <p class="sezioni">Donna</p>
-        </a>
-        <table id="donna">
-          <tr>
-            <td>Sopracciglia</td>
-            <td>€9</td>
-          </tr>
-          <tr>
-            <td>Baffi</td>
-            <td>€6</td>
-          </tr>
-          <tr>
-            <td>Viso</td>
-            <td>€8</td>
-          </tr>
-          <tr>
-            <td>Ascelle</td>
-            <td>€8</td>
-          </tr>
-          <tr>
-            <td>Braccia</td>
-            <td>€15</td>
-          </tr>
-          <tr>
-            <td>Gambe</td>
-            <td>€25</td>
-          </tr>
-          <tr>
-            <td>Inguine da</td>
-            <td>€10</td>
-          </tr>
-          <tr>
-            <td>Inguine tot.</td>
-            <td>€15</td>
-          </tr>
-          <tr>
-            <td>Glutei</td>
-            <td>€5</td>
-          </tr>
-          <tr>
-            <td>½ gamba</td>
-            <td>€18</td>
-          </tr>
-          <tr>
-            <td>Total body</td>
-            <td>€60</td>
-          </tr>
-        </table>
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('uomo')" href="javascript:void(0);">
-          <p class="sezioni">Uomo</p>
-        </a>
-        <table id="uomo">
-          <tr>
-            <td>Braccia</td>
-            <td>€18</td>
-          </tr>
-          <tr>
-            <td>Petto</td>
-            <td>€20</td>
-          </tr>
-          <tr>
-            <td>Ascelle</td>
-            <td>€8</td>
-          </tr>
-          <tr>
-            <td>Schiena</td>
-            <td>€20</td>
-          </tr>
-          <tr>
-            <td>Gambe</td>
-            <td>€30</td>
-          </tr>
-          <tr>
-            <td>Inguine</td>
-            <td>€10</td>
-          </tr>
-          <tr>
-            <td>Gluteo</td>
-            <td>€10</td>
-          </tr>
-          <tr>
-            <td>Total body</td>
-            <td>€80</td>
-          </tr>
+            <div class="menu-items-mobile">
+                <button class="close-menu" onclick="toggleMenu()">✕</button>
+                <a href="#posizione">Dove siamo</a>
+                <a href="#orari">Orari</a>
+                <a href="approfondimenti.html">Approfondimenti</a>
+                <a href="galleria.html">Galleria</a>
+                <a href="#contatti">Contatti</a>
+            </div>
+                    </nav>
+        </div>
+    </header>
 
-        </table>
+    <main>
+        <!-- Carosello -->
+        <section class="carosello">
+            <div class="carosello-container">
+                <img src="media/img/unghie-trasparenti.jpg" class="active">
+                <img src="media/img/unghie-rosse3.jpg">
+                <img src="media/img/unghie-blu1.jpg">
+                <img src="media/img/unghie-blu2.jpg">
+                <img src="media/img/unghie-blu3.jpg">
+                <img src="media/img/unghie-blu4.jpg">
+                <img src="media/img/unghie-nere1.jpg">
+                <img src="media/img/unghie-bianche.jpg">
+                <img src="media/img/unghie-bianche2.jpg">
+                <img src="media/img/unghie-bianche3.jpg">
+                <img src="media/img/unghie-viola1.jpg">
+                <img src="media/img/unghie-viola2.jpg">
+                <img src="media/img/unghie-viola3.jpg">
+                <img src="media/img/unghie-viola4.jpg">
+                <img src="media/img/unghie-viola5.jpg">
+                <img src="media/img/unghie-rosse6.jpg">
+                <img src="media/img/unghie-pastello.jpg">
+                <img src="media/img/unghie-rosse1.jpg">
+                <img src="media/img/unghie-rosse2.jpg">
+                <img src="media/img/unghie-rosse3.jpg">
+                <img src="media/img/unghie-rosse4.jpg">
+                <img src="media/img/unghie-rosse5.jpg">
+                <img src="media/img/unghie-rosse6.jpg">
+                <img src="media/img/unghie-rosse7.jpg">
+                <img src="media/img/unghie-rosse8.jpg">
+                <img src="media/img/unghie-rosa1.jpg">
+                <img src="media/img/unghie-rosa2.jpg">
+                <img src="media/img/unghie-rosa3.jpg">
+                <img src="media/img/unghie-rosa4.jpg">
+                <img src="media/img/unghie-rosa5.jpg">
+                <img src="media/img/unghie-rosa6.jpg">
+                <img src="media/img/unghie-rosa7.jpg">
+                <img src="media/img/unghie-rosa8.jpg">
+                <img src="media/img/unghie-rosa9.jpg">
+                <img src="media/img/unghie-rosa10.jpg">
+                <img src="media/img/unghie-rosa11.jpg">
+                <img src="media/img/unghie-rosa12.jpg">
+                <img src="media/img/unghie-rosa13.jpg">
+                <img src="media/img/unghie-argento.jpg">
+                <button class="carousel-btn prev" aria-label="Immagine precedente">‹</button>
+                <button class="carousel-btn next" aria-label="Immagine successiva">›</button>
+            </div>
+            <script src="assets/js/carosello.js"></script>
+        </section>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('unghie')" href="javascript:void(0);">
-          <p class="sezioni">Unghie</p>
-        </a>
-        <table id="unghie">
-          <tr>
-            <td>Taglio unghie</td>
-            <td>€5</td>
-          </tr>
-          <tr>
-            <td>Applicazione smalto</td>
-            <td>€5</td>
-          </tr>
-          <tr>
-            <td>Manicure</td>
-            <td>€15</td>
-          </tr>
-          <tr>
-            <td>Pedicure completo</td>
-            <td>€37</td>
-          </tr>
-          <tr>
-            <td>Calletto</td>
-            <td>€7</td>
-          </tr>
-          <tr>
-            <td>Semi-permanente</td>
-            <td>€33</td>
-          </tr>
-          <tr>
-            <td>Semi-gel</td>
-            <td>€40</td>
-          </tr>
-          <tr>
-            <td>Refill gel da</td>
-            <td>€43</td>
-          </tr>
-          <tr>
-            <td>Ricostruzione gel</td>
-            <td>€55</td>
-          </tr>
-          <tr>
-            <td>Rimozione gel</td>
-            <td>€10</td>
-          </tr>
-          <tr>
-            <td>Ricostruzione acrigel</td>
-            <td>€70</td>
-          </tr>
-          <tr>
-            <td>Refill acrigel</td>
-            <td>€55</td>
-          </tr>
-          <tr>
-            <td>Nail art da</td>
-            <td>€2</td>
-          </tr>
-        </table>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Mebilly Beauty</h1>
+            <p>Il tuo spazio di bellezza, relax e cura a Legnano</p>
+        </section>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('viso')" href="javascript:void(0);">
-          <p class="sezioni">Viso</p>
-        </a>
-        <table id="viso">
-          <tr>
-            <td>Pulizia viso (under 18)</td>
-            <td>€40</td>
-          </tr>
-          <tr>
-            <td>Pulizia viso</td>
-            <td>€50</td>
-          </tr>
-          <tr>
-            <td>Pulizia viso con trattamento</td>
-            <td>€60</td>
-          </tr>
-          <tr>
-            <td>Grani di miglio da</td>
-            <td>€5</td>
-          </tr>
-          <tr>
-            <td>Schiena</td>
-            <td>€40</td>
-          </tr>
-        </table>
+        <!-- Banner -->
+        <section>
+            <img class="banner" src="media/img/banner-epilazione-laser-diodo.jpg" alt="banner">
+        </section>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('massaggi')" href="javascript:void(0);">
-          <p class="sezioni">Massaggi</p>
-        </a>
-        <table id="massaggi">
-          <tr>
-            <td>Massaggio viso 15 min.</td>
-            <td>€20</td>
-          </tr>
-          <tr>
-            <td>Schiena 30 min</td>
-            <td>€35</td>
-          </tr>
-          <tr>
-            <td>Drenante arto inferiore</td>
-            <td>€35</td>
-          </tr>
-          <tr>
-            <td>Total body relax</td>
-            <td>€60</td>
-          </tr>
-          <tr>
-            <td>Dermo linfatico</td>
-            <td>€65</td>
-          </tr>
-          <tr>
-            <td>Con conchiglie</td>
-            <td>€65</td>
-          </tr>
-          <tr>
-            <td>Jolly</td>
-            <td>€50</td>
-          </tr>
-        </table>
+        <!-- Listino Prezzi -->
+        <section id="listino-prezzi">
+            <div class="container">
+                <h2>Listino prezzi</h2>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('trattamento-corpo')" href="javascript:void(0);">
-          <p class="sezioni">Trattamento corpo</p>
-        </a>
-        <table id="trattamento-corpo">
-          <tr>
-            <td>Massaggio esfoliante</td>
-            <td>€40</td>
-          </tr>
-          <tr>
-            <td>Bendaggio freddo</td>
-            <td>€20</td>
-          </tr>
-          <tr>
-            <td>Fango corpo</td>
-            <td>€50</td>
-          </tr>
-          <tr>
-            <td>Presso-massaggio (macchinario)
-              <a href="approfondimenti.html#presso-massaggio" class="approfondisci"> » approfondisci<a>
-            </td>
-            <td>€45</td>
-          </tr>
-        </table>
+                <!-- Donna -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('donna')" href="javascript:void(0);">
+                    <p class="sezioni">Donna</p>
+                </a>
+                <table id="donna">
+                    <tr><td>Sopracciglia</td><td>€9</td></tr>
+                    <tr><td>Baffi</td><td>€6</td></tr>
+                    <tr><td>Viso</td><td>€8</td></tr>
+                    <tr><td>Ascelle</td><td>€8</td></tr>
+                    <tr><td>Braccia</td><td>€15</td></tr>
+                    <tr><td>Gambe</td><td>€25</td></tr>
+                    <tr><td>Inguine da</td><td>€10</td></tr>
+                    <tr><td>Inguine tot.</td><td>€15</td></tr>
+                    <tr><td>Glutei</td><td>€5</td></tr>
+                    <tr><td>½ gamba</td><td>€18</td></tr>
+                    <tr><td>Total body</td><td>€60</td></tr>
+                </table>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('trattamento-viso')" href="javascript:void(0);">
-          <p class="sezioni">Trattamento viso</p>
-        </a>
-        <table id="trattamento-viso">
-          <tr>
-            <td>Trattamento viso anti-age</td>
-            <td>€50
-              <a href="approfondimenti.html#trattamentovisoantiage" class="approfondisci"> » approfondisci<a>
-            </td>
-          </tr>
-          <tr>
-            <td>Antiossidante intensivo alla vitamina C</td>
-            <td>€60</td>
-          </tr>
-          <tr>
-            <td>Rituale anti-age petali di luce</td>
-            <td>€80</td>
-          </tr>
-          <tr>
-            <td>Laminazione ciglia</td>
-            <td>€50</td>
-          </tr>
-          <tr>
-            <td>Laminazione sopracciglia</td>
-            <td>€40</td>
-          </tr>
-          <tr>
-            <td>Laminazione ciglia + tinta</td>
-            <td>€65</td>
-          </tr>
-          <tr>
-            <td>Tinta sopracciglia</td>
-            <td>€13</td>
-          </tr>
-          <tr>
-            <td>Laminazione sopracciglia + tinta</td>
-            <td>€55</td>
-          </tr>
-          <tr>
-            <td>Laminazione total eyes</td>
-            <td>€100</td>
-          </tr>
-        </table>
+                <!-- Uomo -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('uomo')" href="javascript:void(0);">
+                    <p class="sezioni">Uomo</p>
+                </a>
+                <table id="uomo">
+                    <tr><td>Braccia</td><td>€18</td></tr>
+                    <tr><td>Petto</td><td>€20</td></tr>
+                    <tr><td>Ascelle</td><td>€8</td></tr>
+                    <tr><td>Schiena</td><td>€20</td></tr>
+                    <tr><td>Gambe</td><td>€30</td></tr>
+                    <tr><td>Inguine</td><td>€10</td></tr>
+                    <tr><td>Gluteo</td><td>€10</td></tr>
+                    <tr><td>Total body</td><td>€80</td></tr>
+                </table>
 
-        <a class="sezioni-link" onclick="toggleElementVisibility('trucco')" href="javascript:void(0);">
-          <p class="sezioni">Trucco</p>
-        </a>
-        <table id="trucco">
-          <tr>
-            <td>Trucco giorno da</td>
-            <td>€50</td>
-          </tr>
-          <tr>
-            <td>Trucco sera da</td>
-            <td>€60</td>
-          </tr>
-          <tr>
-            <td>Trucco sposa da</td>
-            <td>€150</td>
-          </tr>
-        </table>
+                <!-- Unghie -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('unghie')" href="javascript:void(0);">
+                    <p class="sezioni">Unghie</p>
+                </a>
+                <table id="unghie">
+                    <tr><td>Taglio unghie</td><td>€5</td></tr>
+                    <tr><td>Applicazione smalto</td><td>€5</td></tr>
+                    <tr><td>Manicure</td><td>€15</td></tr>
+                    <tr><td>Pedicure completo</td><td>€37</td></tr>
+                    <tr><td>Calletto</td><td>€7</td></tr>
+                    <tr><td>Semi-permanente</td><td>€33</td></tr>
+                    <tr><td>Semi-gel</td><td>€40</td></tr>
+                    <tr><td>Refill gel da</td><td>€43</td></tr>
+                    <tr><td>Ricostruzione gel</td><td>€55</td></tr>
+                    <tr><td>Rimozione gel</td><td>€10</td></tr>
+                    <tr><td>Ricostruzione acrigel</td><td>€70</td></tr>
+                    <tr><td>Refill acrigel</td><td>€55</td></tr>
+                    <tr><td>Nail art da</td><td>€2</td></tr>
+                </table>
 
-      </div>
-    </section>
+                <!-- Viso -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('viso')" href="javascript:void(0);">
+                    <p class="sezioni">Viso</p>
+                </a>
+                <table id="viso">
+                    <tr><td>Pulizia viso (under 18)</td><td>€40</td></tr>
+                    <tr><td>Pulizia viso</td><td>€50</td></tr>
+                    <tr><td>Pulizia viso con trattamento</td><td>€60</td></tr>
+                    <tr><td>Grani di miglio da</td><td>€5</td></tr>
+                    <tr><td>Schiena</td><td>€40</td></tr>
+                </table>
 
-    <section id="descrizione">
-      <div class="container">
-        <p class="descrizione">Il mio lavoro è come un'opera d'arte, in continuo progresso e aggiornamento.
-          <br />Ho tanti obiettivi da raggiungere lungo il mio percorso, credo fortemente in ciò che studio ed è per
-          questo che svolgo con passione ogni singolo lavoro.<br />La soddisfazione più grande è il sorriso di chi si
-          affida ai miei trattamenti di bellezza.<br /> Vieni in salone per consulenze gratuite e pacchetti
-          personalizzati.<br /><br />Ti aspetto!
-        </p><br />
-      </div>
-    </section>
+                <!-- Massaggi -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('massaggi')" href="javascript:void(0);">
+                    <p class="sezioni">Massaggi</p>
+                </a>
+                <table id="massaggi">
+                    <tr><td>Massaggio viso 15 min.</td><td>€20</td></tr>
+                    <tr><td>Schiena 30 min</td><td>€35</td></tr>
+                    <tr><td>Drenante arto inferiore</td><td>€35</td></tr>
+                    <tr><td>Total body relax</td><td>€60</td></tr>
+                    <tr><td>Dermo linfatico</td><td>€65</td></tr>
+                    <tr><td>Con conchiglie</td><td>€65</td></tr>
+                    <tr><td>Jolly</td><td>€50</td></tr>
+                </table>
 
-    <section id="posizione">
-      <div class="container">
-        <p class="posizione">
-        <h2>Dove siamo</h2><br />
-        <p style="font-family:Arial, Helvetica, sans-serif">Ci trovate all'interno di<br /><a
-            style="font-family:Arial, Helvetica, sans-serif"
-            href="https://bookappweb.it/mambodajobarbershopandladies/?fbclid=PAAaZco0aAO-17FQd0Zn3SwrN8QxCkOnfZmrouflxX0uMxrXpTmnTUcYYANGw">Mambo
-            Barber Shop ladies and beauty</a></p>
-        <p style="font-family:Arial, Helvetica, sans-serif">Via Renzo Bottini 7, Legnano (MI)</p>
-        <iframe class="mappe"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </p>
-      </div>
-    </section>
+                <!-- Trattamento corpo -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('trattamento-corpo')" href="javascript:void(0);">
+                    <p class="sezioni">Trattamento corpo</p>
+                </a>
+                <table id="trattamento-corpo">
+                    <tr><td>Laser diodo 808</td><td>a partire da €15</td></tr>
+                    <tr><td>Massaggio esfoliante</td><td>€40</td></tr>
+                    <tr><td>Bendaggio freddo</td><td>€20</td></tr>
+                    <tr><td>Fango corpo</td><td>€50</td></tr>
+                    <tr><td>Presso-massaggio (macchinario) <a href="approfondimenti.html#presso-massaggio" class="approfondisci">» approfondisci</a></td><td>€45</td></tr>
+                </table>
 
-    <section id="orari">
-      <div class="container">
-        <h2>Orari</h2>
-        <table class="orari-tabella">
-          <tr>
-            <th>Lunedì</th>
-            <td>Chiuso</td>
-          </tr>
-          <tr>
-            <th>Martedì</th>
-            <td>13:00-19:30</td>
-          </tr>
-          <tr>
-            <th>Mercoledì</th>
-            <td>13:00-21:00</td>
-          </tr>
-          <tr>
-            <th>Giovedì</th>
-            <td>11:00-19:30</td>
-          </tr>
-          <tr>
-            <th>Venerdì</th>
-            <td>9:30-19:30</td>
-          </tr>
-          <tr>
-            <th>Sabato</th>
-            <td>9:00-16:00</td>
-          </tr>
-          <tr>
-            <th>Domenica</th>
-            <td>Chiuso</td>
-          </tr>
-        </table>
-      </div>
-    </section>
+                <!-- Trattamento viso -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('trattamento-viso')" href="javascript:void(0);">
+                    <p class="sezioni">Trattamento viso</p>
+                </a>
+                <table id="trattamento-viso">
+                    <tr><td>Trattamento viso anti-age <a href="approfondimenti.html#trattamentovisoantiage" class="approfondisci">» approfondisci</a></td><td>€50</td></tr>
+                    <tr><td>Antiossidante intensivo alla vitamina C</td><td>€60</td></tr>
+                    <tr><td>Rituale anti-age petali di luce</td><td>€80</td></tr>
+                    <tr><td>Liftante ad alta tensione</td><td>€130</td></tr>
+                    <tr><td>Laminazione ciglia</td><td>€50</td></tr>
+                    <tr><td>Laminazione sopracciglia</td><td>€40</td></tr>
+                    <tr><td>Laminazione ciglia + tinta</td><td>€65</td></tr>
+                    <tr><td>Tinta sopracciglia</td><td>€13</td></tr>
+                    <tr><td>Laminazione sopracciglia + tinta</td><td>€55</td></tr>
+                    <tr><td>Laminazione total eyes</td><td>€100</td></tr>
+                </table>
 
-  </main>
-  <footer>
-    <div id="contatti">
-      <br />
-      <a href="https://www.instagram.com/mebilly_beauty/" class="social-button" target="_blank"><i
-          class="fa fa-instagram social-button" style="display: flex;"></i></a>&nbsp;
-      <p style="font-family: Arial, Helvetica, sans-serif;">+39 340 964 7398</p>
-      <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">P. iva 12727690963</p>
-      <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">Informativa sulla privacy: il sito non fa
-        uso di cookie.</p>
-      <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">Mebilly - 2024</p>
-    </div>
+                <!-- Trucco -->
+                <a class="sezioni-link" onclick="toggleElementVisibility('trucco')" href="javascript:void(0);">
+                    <p class="sezioni">Trucco</p>
+                </a>
+                <table id="trucco">
+                    <tr><td>Trucco giorno da</td><td>€50</td></tr>
+                    <tr><td>Trucco sera da</td><td>€60</td></tr>
+                    <tr><td>Trucco sposa da</td><td>€150</td></tr>
+                </table>
+            </div>
+        </section>
 
+        <!-- Descrizione -->
+        <section id="descrizione">
+            <div class="container">
+                <p class="descrizione">
+                    Il mio lavoro è come un'opera d'arte, in continuo progresso e aggiornamento.<br>
+                    Ho tanti obiettivi da raggiungere lungo il mio percorso, credo fortemente in ciò che studio ed è per questo che
+                    svolgo con passione ogni singolo lavoro.<br>
+                    La soddisfazione più grande è il sorriso di chi si affida ai miei trattamenti di bellezza.<br>
+                    Vieni in salone per consulenze gratuite e pacchetti personalizzati.<br><br>
+                    Ti aspetto!
+                </p>
+            </div>
+        </section>
 
-    <a href="#" class="torna-su">^</a>
-  </footer>
+        <!-- Dove siamo -->
+        <section id="posizione">
+            <div class="container">
+                <h2>Dove siamo</h2>
+                <p>Ci trovate all'interno di<br>
+                    <a href="https://bookappweb.it/mambodajobarbershopandladies/?fbclid=PAAaZco0aAO-17FQd0Zn3SwrN8QxCkOnfZmrouflxX0uMxrXpTmnTUcYYANGw">
+                        Mambo Barber Shop ladies and beauty</a>
+                </p>
+                <p>Via Renzo Bottini 7, Legnano (MI)</p>
+                <iframe class="mappe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Orari -->
+        <section id="orari">
+            <div class="container">
+                <h2>Orari</h2>
+                <table class="orari-tabella">
+                    <tr><th>Lunedì</th><td>Chiuso</td></tr>
+                    <tr><th>Martedì</th><td>13:00-19:30</td></tr>
+                    <tr><th>Mercoledì</th><td>13:00-21:00</td></tr>
+                    <tr><th>Giovedì</th><td>11:00-19:30</td></tr>
+                    <tr><th>Venerdì</th><td>9:30-19:30</td></tr>
+                    <tr><th>Sabato</th><td>9:00-16:00</td></tr>
+                    <tr><th>Domenica</th><td>Chiuso</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="contatti">
+            <a href="https://www.instagram.com/mebilly_beauty/" class="social-button" target="_blank">
+                <i class="fa fa-instagram social-button" style="display: flex;"></i>
+            </a>
+            <p style="font-family: Arial, Helvetica, sans-serif;">+39 340 964 7398</p>
+            <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">P. iva 12727690963</p>
+            <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">Informativa sulla privacy: il sito non fa uso di cookie.</p>
+            <p style="font-size:100%; font-family: Arial, Helvetica, sans-serif;">Mebilly - 2026</p>
+        </div>
+        <a href="#" class="torna-su">^</a>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+            console.log('Menu toggled:', menu.classList.contains('active'));
+        }
+
+        // Chiudi il menu quando clicchi su un link
+        document.querySelectorAll('.menu-items-mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.menu').classList.remove('active');
+            });
+        });
+
+        // Chiudi il menu quando la finestra si ridimensiona (es. da mobile a desktop)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1000) {
+                document.querySelector('.menu').classList.remove('active');
+            }
+        });
+    </script>
 </body>
-
 </html>

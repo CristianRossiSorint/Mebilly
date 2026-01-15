@@ -1,73 +1,215 @@
-/*****CAROUSEL*******/
-
+/***** CAROUSEL – MODERN BEAUTY STYLE *****/
 .carosello {
-	width: 100%;
-	height: 75vw;
-	position: relative;
+    width: 100%;
+    height: 85vh;
+    max-height: 900px;
+    position: relative;
+    overflow: hidden;
+    background: #fff0ef;
 }
 
+/* Container immagini */
 .carosello-container {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
+/* Immagini */
 .carosello-container img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: opacity 1s;
-	object-fit: contain;
+    filter: contrast(1.05) saturate(1.05);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out, transform 6s ease;
+    transform: scale(1.05);
 }
 
+/* Immagine attiva */
 .carosello-container img.active {
-	opacity: 1;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
 }
 
-@keyframes glow {
-	from {
-		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #800080,
-			0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-	}
-
-	to {
-		text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-			0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-	}
+/* Overlay elegante */
+.carosello::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(255, 195, 194, 0.12),
+        rgba(255, 240, 239, 0.18));
+    z-index: 2;
+    pointer-events: none;
 }
 
+/* ===== CTA / LOGO / TESTO ===== */
 .carosello .btn {
-	background-color: #F594A3;
-	color: #FFE5D9;
-	border-radius: 10px;
-	text-align: center;
-	font-family: ragiel-bold;
-
-	border-radius: 10px;
-	font-family: ragiel-bold;
-	-webkit-animation: glow 1s ease-in-out infinite alternate;
-	-moz-animation: glow 1s ease-in-out infinite alternate;
-	animation: glow 1s ease-in-out infinite alternate;
-
-	height: fit-content;
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 15px 20px 10px 20px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.9);
+    color: #8b4a4a;
+    font-family: ragiel-bold;
+    font-size: 32px;
+    letter-spacing: 2px;
+    padding: 18px 40px;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
 }
 
-@media screen and (max-width: 800px) {
-
-	.carosello .carosello-img {
-		max-width: 200%;
-		max-height: 200%;
-	}
+/* Hover CTA */
+.carosello .btn:hover {
+    transform: translateX(-50%) translateY(-5px);
+    background: #ffc3c2;
+    color: white;
 }
 
-/************/
+/* ===== CAROUSEL BUTTONS ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.85);
+    color: #8b4a4a;
+    font-size: 32px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: #ffc3c2;
+    color: white;
+}
+
+.carousel-btn.prev {
+    left: 30px;
+}
+
+.carousel-btn.next {
+    right: 30px;
+}
+
+/* ===== THUMBNAILS ===== */
+.thumbnails-container {
+    width: 100%;
+    padding: 30px 20px;
+    background: #fff0ef;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+.thumbnails-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.thumbnails-container::-webkit-scrollbar-track {
+    background: rgba(255, 195, 194, 0.2);
+    border-radius: 10px;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 195, 194, 0.6);
+    border-radius: 10px;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb:hover {
+    background: #ffc3c2;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.05);
+}
+
+.thumbnail:hover {
+    border-color: #ffc3c2;
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(139, 74, 74, 0.25);
+}
+
+.thumbnail.active {
+    border-color: #ffc3c2;
+    box-shadow: 0 12px 30px rgba(139, 74, 74, 0.35);
+    transform: scale(1.05);
+}
+
+.thumbnail.active::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 195, 194, 0.15);
+    border-radius: 12px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .carosello {
+        height: 60vh;
+    }
+
+    .carosello .btn {
+        font-size: 20px;
+        padding: 14px 28px;
+        bottom: 30px;
+    }
+
+    .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+        border-width: 2px;
+    }
+
+    .thumbnails-container {
+        gap: 10px;
+        padding: 20px 15px;
+    }
+}
