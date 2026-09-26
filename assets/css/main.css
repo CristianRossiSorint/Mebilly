@@ -27,6 +27,8 @@ table {
 FONTS
 *********************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 @font-face {
     font-family: ragiel;
     src: url("../fonts/ragiel/Ragiel.otf") format("opentype");
@@ -47,12 +49,17 @@ VARIABLES
 *********************************/
 
 :root {
-    --pink-main: #ffc3c2;
-    --pink-soft: #fff0ef;
-    --pink-light: #fff6f6;
+    --pink-main: #eec2c0;
+    --pink-soft: #fbeeeb;
+    --pink-light: #fdf7f3;
     --accent-dark: #8b4a4a;
-    --text-main: #2b2b2b;
+    --rust: #8b4a4a;
+    --rust-soft: #b97d7d;
+    --ink: #2c2a3a;
+    --text-main: #2c2a3a;
     --white: #ffffff;
+    --font-display: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Lora', 'Georgia', serif;
 }
 
 /********************************
@@ -66,8 +73,42 @@ html {
 body {
     background: var(--pink-light);
     color: var(--text-main);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
+    position: relative;
+}
+
+/* Watercolor corner washes, echoing the printed listino */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 46vw;
+    max-width: 620px;
+    height: 46vw;
+    max-height: 620px;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::before {
+    top: -18vw;
+    left: -18vw;
+    background: radial-gradient(circle, rgba(238,194,192,0.85) 0%, rgba(238,194,192,0) 70%);
+}
+
+body::after {
+    bottom: -18vw;
+    right: -18vw;
+    background: radial-gradient(circle, rgba(185,125,125,0.35) 0%, rgba(185,125,125,0) 70%);
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 1;
 }
 
 a {
@@ -77,7 +118,7 @@ a {
 }
 
 a:hover {
-    color: var(--pink-main);
+    color: var(--rust);
 }
 
 /********************************
@@ -85,33 +126,93 @@ TYPOGRAPHY
 *********************************/
 
 h1, h2, p {
-    font-family: monatha;
     text-align: center;
 }
 
+h1, h2 {
+    font-family: var(--font-display);
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     margin-bottom: 5px;
     margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     margin-bottom: 30px;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 h2::after {
     content: "";
     width: 60px;
-    height: 3px;
-    background: var(--pink-main);
+    height: 2px;
+    background: var(--rust);
     display: block;
-    margin: 15px auto 0;
+    margin: 18px auto 0;
 }
 
 p {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
+    font-family: var(--font-body);
+}
+
+/********************************
+HERO
+*********************************/
+
+.hero {
+    position: relative;
+    padding: 70px 20px 40px;
+    flex-direction: column;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 220px;
+    background: url("../img/ramo-decorativo.svg") no-repeat center / contain;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: 0;
+    left: 20px;
+    transform: rotate(-10deg);
+}
+
+.hero::after {
+    bottom: -20px;
+    right: 20px;
+    transform: rotate(170deg);
+}
+
+.hero-eyebrow {
+    font-family: var(--font-body);
+    font-style: italic;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .hero::before,
+    .hero::after {
+        width: 90px;
+        height: 140px;
+    }
 }
 
 /********************************
@@ -137,6 +238,8 @@ section {
     border-radius: 25px;
     padding: 50px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
 }
 
 /********************************
@@ -187,15 +290,17 @@ header {
 }
 
 .menu-left a, .menu-right a {
-    font-family: monatha;
-    font-size: 28px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 19px;
     padding: 12px 22px;
     border-radius: 25px;
     transition: all 0.3s ease;
+    color: var(--accent-dark);
 }
 
 .menu-left a:hover, .menu-right a:hover {
-    background: var(--pink-main);
+    background: var(--accent-dark);
     color: white;
     transform: translateY(-2px);
 }
@@ -235,8 +340,9 @@ header {
 }
 
 .menu-items-mobile a {
-    font-family: monatha;
-    font-size: 26px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
     padding: 18px 0;
     width: 100%;
     text-align: center;
@@ -271,28 +377,128 @@ tr:nth-child(even) {
 }
 
 .orari-tabella th {
-    background: var(--pink-main);
+    background: var(--rust);
     color: white;
     text-align: right;
+    font-family: var(--font-display);
+    font-weight: 600;
 }
 
 /********************************
 LISTINO
 *********************************/
 
-.sezioni {
-    background: var(--pink-main);
-    color: white;
-    padding: 18px;
-    border-radius: 20px;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    font-size: 1.4rem;
+#listino-prezzi h2 {
+    margin-bottom: 10px;
 }
 
-.sezioni:hover {
-    transform: scale(1.02);
+.listino-intro {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--accent-dark);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+/* Macro category (Epilazione / Bellezza / Rituals) */
+.listino-categoria {
+    margin-bottom: 60px;
+}
+
+.listino-categoria:last-child {
+    margin-bottom: 0;
+}
+
+.listino-categoria-titolo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.listino-categoria-sottotitolo {
+    display: block;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-top: 8px;
+}
+
+.listino-categoria-titolo + .listino-divider {
+    margin-top: 25px;
+}
+
+/* Thin rule flanking each sub-section name, à la listino stampato */
+.sezioni-link {
+    display: block;
+    margin: 35px 0 5px;
+}
+
+.sezioni {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    background: none;
+    transition: color 0.3s ease;
+}
+
+.sezioni::before,
+.sezioni::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rust);
+    opacity: 0.5;
+}
+
+.sezioni-link:hover .sezioni {
+    color: var(--rust);
+}
+
+#listino-prezzi table {
+    margin-bottom: 10px;
+}
+
+#listino-prezzi td {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(139, 74, 74, 0.15);
+    background: none !important;
+}
+
+#listino-prezzi td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: var(--rust);
+    white-space: nowrap;
+    padding-left: 20px;
+}
+
+#listino-prezzi .approfondisci {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--rust);
 }
 
 /********************************
@@ -300,25 +506,97 @@ DESCRIZIONE
 *********************************/
 
 .descrizione {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    font-family: var(--font-body);
+    font-style: italic;
     max-width: 900px;
     margin: auto;
+}
+
+/********************************
+BANNER
+*********************************/
+
+.banner-nuovo {
+    width: 100%;
+    max-width: 1400px;
+    background: linear-gradient(135deg, var(--pink-soft) 0%, #fff 60%);
+    border-radius: 25px;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(139, 74, 74, 0.15);
+}
+
+.banner-nuovo::before,
+.banner-nuovo::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(238,194,192,0.6) 0%, rgba(238,194,192,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.banner-nuovo::before { top: -60px; left: -60px; }
+.banner-nuovo::after { bottom: -60px; right: -60px; }
+
+.banner-eyebrow {
+    font-family: var(--font-body);
+    font-style: italic;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.banner-nuovo h2 {
+    margin-bottom: 12px;
+}
+
+.banner-sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.banner-cta {
+    display: inline-block;
+    padding: 14px 34px;
+    border: 1px solid var(--rust);
+    border-radius: 30px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--rust);
+    transition: all 0.3s ease;
+}
+
+.banner-cta:hover {
+    background: var(--rust);
+    color: white;
 }
 
 /********************************
 MAP
 *********************************/
 
-.banner {
-    max-width: 50%;
-    height: auto;
-}
-
 .mappe {
+    display: block;
     width: 100%;
     max-width: 600px;
     height: 450px;
     border: none;
+    margin: 10px auto 0;
+    border-radius: 15px;
 }
 
 /********************************
@@ -326,13 +604,25 @@ FOOTER
 *********************************/
 
 footer {
-    background: var(--pink-main);
-    color: white;
+    background: var(--pink-soft);
+    color: var(--accent-dark);
+    border-top: 1px solid rgba(139, 74, 74, 0.25);
     padding: 50px 20px;
 }
 
 footer p {
     font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--accent-dark);
+    opacity: 0.85;
+}
+
+footer .social-button {
+    color: var(--rust);
+}
+
+footer .social-button:hover {
+    color: var(--accent-dark);
 }
 
 /********************************
@@ -346,13 +636,14 @@ TORNA SU
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: var(--pink-main);
+    background: var(--rust);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 2;
 }
 
 /********************************
@@ -427,7 +718,33 @@ MOBILE TYPOGRAPHY
         padding: 25px 15px;
     }
 
-    .banner {
-        max-width: 90%;
+    .banner-nuovo {
+        padding: 40px 20px;
+    }
+
+    .listino-categoria-titolo {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .listino-categoria-sottotitolo {
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+    }
+
+    .sezioni {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        gap: 12px;
+    }
+
+    body::before, body::after {
+        opacity: 0.22;
+    }
+
+    #listino-prezzi .approfondisci {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
     }
 }
