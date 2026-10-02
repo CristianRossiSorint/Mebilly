@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mebilly Beauty — centro estetico a Legnano (MI). Unghie, viso, corpo e laser diodo 808nm. Il tuo spazio di bellezza, relax e cura: Via Renzo Bottini 7, Legnano. Prenota al +39 340 964 7398.">
+<title>Mebilly Beauty · Atelier Crema</title>
+<link rel="icon" type="image/jpeg" href="../media/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F0E8;
+    --ink:#3A322C;
+    --taupe:#A49384;
+    --taupe-dark:#8A7A6B;
+    --white:#FFFFFF;
+    --line:rgba(58,50,44,.14);
+    --ink-60:rgba(58,50,44,.62);
+    --ink-40:rgba(58,50,44,.42);
+    --serif:'Cormorant Garamond','Times New Roman',Georgia,serif;
+    --sans:'Jost','Segoe UI',system-ui,-apple-system,sans-serif;
+    --header-h:68px;
+    --pad-x:clamp(1.25rem,4vw,2.5rem);
+    --section-y:clamp(4rem,9vw,7.5rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:clamp(1rem,.95rem + .25vw,1.075rem);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+
+  body.menu-open{overflow:hidden}
+
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+
+  :focus-visible{outline:2px solid var(--taupe);outline-offset:3px}
+
+  ::selection{background:var(--taupe);color:var(--cream)}
+
+  .container{width:min(1120px,100% - (var(--pad-x) * 2));margin-inline:auto}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-weight:400;
+    font-size:clamp(.68rem,.64rem + .15vw,.75rem);
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--taupe-dark);
+    display:flex;
+    align-items:center;
+    gap:.9rem;
+  }
+  .eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--taupe);flex:none}
+
+  .eyebrow--center{justify-content:center}
+  .eyebrow--center::after{content:"";width:2.2rem;height:1px;background:var(--taupe);flex:none}
+  .eyebrow--bare::before{display:none}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
+
+  .h2{
+    font-size:clamp(1.9rem,1.3rem + 2.6vw,3rem);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    margin-top:1.1rem;
+  }
+
+  .lead{font-size:clamp(1.02rem,.98rem + .3vw,1.15rem);color:var(--ink-60);max-width:56ch}
+
+  section[id]{scroll-margin-top:calc(var(--header-h) + 16px)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+    min-height:48px;
+    padding:.85rem 1.9rem;
+    border:1px solid transparent;
+    font-family:var(--sans);
+    font-weight:400;
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background-color .3s ease,color .3s ease,border-color .3s ease;
+    white-space:nowrap;
+  }
+  .btn--fill{background:var(--taupe);color:var(--cream)}
+  .btn--fill:hover{background:var(--taupe-dark)}
+  .btn--line{border-color:rgba(58,50,44,.45);color:var(--ink);background:transparent}
+  .btn--line:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .btn--ghost{border-color:rgba(245,240,232,.5);color:var(--cream);background:transparent}
+  .btn--ghost:hover{background:var(--cream);color:var(--ink)}
+  .btn--sm{min-height:42px;padding:.55rem 1.2rem;font-size:.66rem}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:1200;
+    background:rgba(245,240,232,.94);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-bar{
+    height:var(--header-h);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1;z-index:1}
+  .brand-name{font-family:var(--serif);font-weight:500;font-size:1.45rem;letter-spacing:.04em}
+  .brand-sub{
+    font-size:.56rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--taupe-dark);margin-top:.3rem;
+  }
+  .nav-desktop{display:none}
+  .nav-actions{display:flex;align-items:center;gap:.4rem}
+
+  .nav-toggle{
+    width:48px;height:48px;
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+    background:transparent;border:0;cursor:pointer;color:var(--ink);
+  }
+  .nav-toggle span{
+    display:block;width:24px;height:1.5px;background:currentColor;
+    transition:transform .3s ease;
+  }
+  body.menu-open .nav-toggle span:nth-child(1){transform:translateY(4.25px) rotate(45deg)}
+  body.menu-open .nav-toggle span:nth-child(2){transform:translateY(-4.25px) rotate(-45deg)}
+
+  @media (min-width:960px){
+    .nav-bar{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem}
+    .brand{grid-column:2;justify-self:center;text-align:center}
+    .nav-desktop{
+      grid-column:1;grid-row:1;justify-self:start;
+      display:flex;align-items:center;gap:clamp(1.1rem,2vw,1.8rem);
+    }
+    .nav-desktop a{
+      font-size:.66rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--ink-60);padding:.6rem 0;transition:color .3s ease;
+    }
+    .nav-desktop a:hover{color:var(--ink)}
+    .nav-actions{grid-column:3;justify-self:end}
+    .nav-toggle{display:none}
+  }
+
+  /* ---------- Mobile menu panel ---------- */
+  .menu-panel{
+    position:fixed;inset:0;z-index:1100;
+    background:var(--cream);
+    transform:translateY(-102%);
+    transition:transform .45s cubic-bezier(.77,0,.18,1);
+    overflow-y:auto;
+    visibility:hidden;
+  }
+  body.menu-open .menu-panel{transform:translateY(0);visibility:visible}
+  .menu-inner{
+    min-height:100%;
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:calc(var(--header-h) + 1rem);
+    padding-bottom:3rem;
+  }
+  .menu-inner nav{display:flex;flex-direction:column;margin-top:1.6rem}
+  .menu-inner nav a{
+    font-family:var(--serif);font-weight:500;text-transform:uppercase;
+    font-size:clamp(1.7rem,7vw,2.4rem);letter-spacing:.04em;
+    padding:.55rem 0;min-height:56px;display:flex;align-items:center;
+    border-bottom:1px solid var(--line);
+    transition:color .3s ease,padding-left .3s ease;
+  }
+  .menu-inner nav a:hover{color:var(--taupe-dark);padding-left:.5rem}
+  .menu-cta{margin-top:2.2rem;display:flex;flex-direction:column;gap:1.2rem;align-items:flex-start}
+  .menu-meta{
+    font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-40);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;gap:0}
+  .hero-copy{
+    padding:clamp(3rem,8vw,5rem) 0 clamp(3rem,7vw,4.5rem);
+    display:flex;flex-direction:column;align-items:flex-start;gap:1.6rem;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem,1.6rem + 5.5vw,4.4rem);
+    text-transform:uppercase;
+    letter-spacing:.015em;
+    line-height:1.02;
+  }
+  .hero h1 em{font-style:italic;font-weight:400}
+  .hero h1 span{display:block}
+  .hero-sub{color:var(--ink-60);max-width:46ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.4rem}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;
+    font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60);
+    border-top:1px solid var(--line);padding-top:1.4rem;margin-top:.6rem;
+  }
+  .hero-meta li{display:flex;align-items:center;gap:.7rem}
+  .hero-meta li::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--taupe);flex:none}
+  .hero-figure{position:relative;min-height:0}
+  .hero-figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+  .hero-tag{
+    position:absolute;left:1rem;bottom:1rem;
+    background:rgba(245,240,232,.94);
+    padding:.7rem 1.1rem;
+    font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+    border:1px solid var(--line);
+  }
+
+  @media (min-width:640px){
+    .hero-grid{grid-template-columns:1.05fr .95fr}
+    .hero-copy{padding-right:clamp(1.5rem,4vw,3.5rem)}
+    .hero-figure img{aspect-ratio:auto;min-height:560px}
+  }
+  @media (min-width:960px){
+    .hero-copy{gap:1.8rem;padding:clamp(3.5rem,6vw,5.5rem) clamp(2rem,4vw,3.5rem) clamp(3.5rem,6vw,5.5rem) 0}
+    .hero-figure img{min-height:calc(100vh - var(--header-h));max-height:820px}
+  }
+
+  /* ---------- Services ---------- */
+  .services{padding-block:var(--section-y)}
+  .services-head{max-width:640px}
+  .services-grid{display:grid;gap:1.1rem;margin-top:2.6rem}
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:clamp(1.6rem,4vw,2.2rem);
+    display:flex;flex-direction:column;gap:.9rem;
+    transition:box-shadow .35s ease,transform .35s ease;
+  }
+  .card:hover{box-shadow:0 22px 44px -28px rgba(58,50,44,.35);transform:translateY(-4px)}
+  .card-icon{width:44px;height:44px;color:var(--taupe-dark)}
+  .card-icon svg{width:100%;height:100%}
+  .card h3{font-size:clamp(1.45rem,1.2rem + 1vw,1.75rem);text-transform:uppercase;letter-spacing:.03em}
+  .card-keys{font-size:.82rem;color:var(--ink-60);letter-spacing:.04em}
+  .card-meta{
+    margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60);
+    display:flex;align-items:baseline;gap:.5rem;
+  }
+  .card-meta strong{font-family:var(--serif);font-size:1.5rem;font-weight:500;letter-spacing:0;color:var(--ink)}
+  .card-link{
+    font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe-dark);
+    display:inline-flex;align-items:center;gap:.45rem;min-height:44px;margin-top:-.4rem;
+  }
+  .card-link svg{width:16px;height:16px;transition:transform .3s ease}
+  .card-link:hover svg{transform:translateX(4px)}
+
+  @media (min-width:640px){
+    .services-grid{grid-template-columns:1fr 1fr}
+    .card:last-child{grid-column:1/-1;max-width:460px;margin-inline:auto;width:100%}
+  }
+  @media (min-width:960px){
+    .services-grid{grid-template-columns:repeat(3,1fr)}
+    .card:last-child{grid-column:auto;max-width:none;margin-inline:0}
+  }
+
+  /* ---------- Price list ---------- */
+  .prices{
+    margin-top:clamp(3rem,7vw,5rem);
+    padding-top:clamp(2.5rem,6vw,4rem);
+    border-top:1px solid var(--line);
+    display:grid;gap:2.5rem;
+  }
+  .prices-intro{display:flex;flex-direction:column;gap:1.1rem}
+  .price-cols{display:grid;gap:0 3rem}
+  .price-row{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding:.85rem 0;border-bottom:1px solid var(--line);
+  }
+  .price-row .p-name{font-size:.95rem;letter-spacing:.03em}
+  .price-row .p-dots{flex:1;border-bottom:1px dotted rgba(58,50,44,.35);transform:translateY(-4px);min-width:1.5rem}
+  .price-row .p-val{font-family:var(--serif);font-size:1.2rem;font-weight:500;white-space:nowrap}
+  .price-note{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-40);margin-top:1.2rem}
+  .prices-photos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start}
+  .prices-photos img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .prices-photos img:first-child{transform:translateY(clamp(1rem,3vw,2.2rem))}
+
+  @media (min-width:640px){
+    .price-cols{grid-template-columns:1fr 1fr}
+  }
+  @media (min-width:960px){
+    .prices{grid-template-columns:1.15fr .85fr;align-items:start}
+    .prices-photos{order:2}
+    .prices-body{order:1}
+  }
+
+  /* ---------- Laser banner ---------- */
+  .laser{
+    position:relative;
+    background:var(--ink);
+    color:var(--cream);
+    overflow:hidden;
+  }
+  .laser::after{
+    content:"808";
+    position:absolute;right:-.06em;top:50%;transform:translateY(-50%);
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-size:clamp(11rem,32vw,24rem);
+    line-height:1;color:rgba(245,240,232,.05);
+    pointer-events:none;user-select:none;
+  }
+  .laser-inner{
+    position:relative;z-index:1;
+    padding-block:clamp(4rem,10vw,7.5rem);
+    max-width:640px;
+    display:flex;flex-direction:column;align-items:flex-start;gap:1.4rem;
+  }
+  .laser .eyebrow{color:rgba(245,240,232,.75)}
+  .laser .eyebrow::before{background:rgba(245,240,232,.55)}
+  .laser h2{
+    font-size:clamp(2rem,1.3rem + 3vw,3.4rem);
+    text-transform:uppercase;letter-spacing:.02em;line-height:1.05;
+  }
+  .laser h2 em{font-style:italic;font-weight:400}
+  .laser p{color:rgba(245,240,232,.72);max-width:48ch}
+  .laser-price{
+    display:inline-flex;align-items:baseline;gap:.6rem;
+    border:1px solid rgba(245,240,232,.35);padding:.55rem 1.2rem;
+    font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  }
+  .laser-price strong{font-family:var(--serif);font-size:1.4rem;font-weight:500;letter-spacing:0}
+  .laser-actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-top:.4rem}
+
+  /* ---------- Philosophy ---------- */
+  .philosophy{padding-block:var(--section-y);border-bottom:1px solid var(--line)}
+  .philo-grid{display:grid;gap:2.6rem;align-items:center}
+  .philo-figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .philo-body{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
+  .philo-quote{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(1.35rem,1.1rem + 1.4vw,1.9rem);
+    line-height:1.4;
+  }
+  .philo-quote strong{font-style:normal;font-weight:500}
+  .philo-sign{
+    font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe-dark);
+    display:flex;align-items:center;gap:.9rem;
+  }
+  .philo-sign::before{content:"";width:2.2rem;height:1px;background:var(--taupe)}
+
+  @media (min-width:960px){
+    .philo-grid{grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,6vw,5.5rem)}
+  }
+
+  /* ---------- Hours ---------- */
+  .hours{padding-block:var(--section-y)}
+  .hours-grid{display:grid;gap:2.8rem;margin-top:2.4rem}
+  .hours-list li{
+    display:flex;align-items:baseline;gap:.9rem;
+    padding:.9rem 0;border-bottom:1px solid var(--line);
+  }
+  .hours-list .d{
+    font-size:.72rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  }
+  .hours-list .dots{flex:1;border-bottom:1px dotted rgba(58,50,44,.35);transform:translateY(-4px);min-width:1.5rem}
+  .hours-list .h{font-family:var(--serif);font-size:1.15rem;font-weight:500;white-space:nowrap}
+  .hours-list .closed{color:var(--ink-40)}
+  .hours-aside{display:flex;flex-direction:column;gap:1.4rem}
+  .hours-aside img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .hours-note{
+    background:var(--white);border:1px solid var(--line);
+    padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;
+  }
+  .hours-note p{font-size:.9rem;color:var(--ink-60)}
+  .hours-note a{
+    font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+    display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
+    border-bottom:1px solid var(--taupe);
+  }
+
+  @media (min-width:960px){
+    .hours-grid{grid-template-columns:1.1fr .9fr;gap:clamp(3rem,6vw,5.5rem);align-items:start}
+  }
+
+  /* ---------- Location ---------- */
+  .location{padding-block:var(--section-y);border-top:1px solid var(--line)}
+  .loc-grid{display:grid;gap:2.4rem;margin-top:2.4rem}
+  .loc-info{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
+  .loc-info address{font-style:normal}
+  .loc-info address .loc-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;line-height:1.2}
+  .loc-info address p{color:var(--ink-60);margin-top:.5rem}
+  .loc-links{display:flex;flex-direction:column;gap:.2rem;width:100%}
+  .loc-links a{
+    display:flex;align-items:center;gap:.9rem;min-height:52px;
+    border-bottom:1px solid var(--line);
+    font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    transition:color .3s ease,padding-left .3s ease;
+  }
+  .loc-links a:hover{color:var(--taupe-dark);padding-left:.4rem}
+  .loc-links svg{width:18px;height:18px;flex:none;color:var(--taupe-dark)}
+  .map{
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:.5rem;
+  }
+  .map iframe{
+    display:block;width:100%;height:100%;min-height:320px;
+    border:0;filter:grayscale(.25) sepia(.08);
+  }
+
+  @media (min-width:960px){
+    .loc-grid{grid-template-columns:.85fr 1.15fr;gap:clamp(3rem,6vw,5rem);align-items:stretch}
+    .map iframe{min-height:420px}
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding-top:clamp(3.5rem,8vw,6rem);
+    padding-bottom:7.5rem; /* spazio per la pillola "Proposte" */
+    text-align:center;
+  }
+  .site-footer .eyebrow{color:rgba(245,240,232,.7);justify-content:center}
+  .site-footer .eyebrow::before,.site-footer .eyebrow::after{background:rgba(245,240,232,.5)}
+  .footer-brand{
+    font-family:var(--serif);font-weight:500;text-transform:uppercase;
+    font-size:clamp(2.2rem,1.4rem + 3.6vw,3.6rem);
+    letter-spacing:.04em;margin-top:1.2rem;
+  }
+  .footer-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem;margin-top:2rem}
+  .footer-lines{
+    margin-top:clamp(2.5rem,6vw,4rem);
+    padding-top:2rem;border-top:1px solid rgba(245,240,232,.18);
+    display:flex;flex-direction:column;gap:.7rem;
+  }
+  .footer-lines p{
+    font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;
+    color:rgba(245,240,232,.6);
+  }
+  .footer-lines a{color:rgba(245,240,232,.85);border-bottom:1px solid rgba(245,240,232,.35)}
+  .footer-lines a:hover{color:var(--cream)}
+
+  /* ---------- Fixed "Proposte" pill ---------- */
+  .back-pill{
+    position:fixed;
+    right:1rem;
+    bottom:calc(1rem + env(safe-area-inset-bottom,0px));
+    z-index:900;
+    display:inline-flex;align-items:center;gap:.45rem;
+    min-height:44px;
+    padding:.6rem 1.15rem;
+    background:var(--cream);
+    color:var(--ink);
+    border:1px solid rgba(58,50,44,.28);
+    border-radius:999px;
+    box-shadow:0 10px 26px -14px rgba(58,50,44,.45);
+    font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+    transition:background-color .3s ease,color .3s ease;
+  }
+  .back-pill:hover{background:var(--ink);color:var(--cream)}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none !important}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- ======= Header ======= -->
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="#top" aria-label="Mebilly Beauty — torna all'inizio">
+      <span class="brand-name">Mebilly</span>
+      <span class="brand-sub">Beauty · Legnano</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Navigazione principale">
+      <a href="#posizione">Dove siamo</a>
+      <a href="#orari">Orari</a>
+      <a href="../approfondimenti.html">Approfondimenti</a>
+      <a href="../galleria.html">Galleria</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn--fill btn--sm" href="tel:+393409647398">Prenota</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Apri il menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======= Mobile menu ======= -->
+<div class="menu-panel" id="menu-panel" aria-hidden="true">
+  <div class="container menu-inner">
+    <p class="eyebrow eyebrow--bare">Mebilly Beauty · Menu</p>
+    <nav aria-label="Menu mobile">
+      <a href="#posizione">Dove siamo</a>
+      <a href="#orari">Orari</a>
+      <a href="../approfondimenti.html">Approfondimenti</a>
+      <a href="../galleria.html">Galleria</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="menu-cta">
+      <a class="btn btn--fill" href="tel:+393409647398">Prenota · +39 340 964 7398</a>
+      <p class="menu-meta">Via Renzo Bottini 7 · 20025 Legnano (MI)<br>@mebilly_beauty</p>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ======= Hero ======= -->
+  <section class="hero" aria-label="Introduzione">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Centro estetico · Legnano (MI)</p>
+        <h1>
+          <span>Beauty, Unghie</span>
+          <span><em>&amp;</em> Benessere</span>
+        </h1>
+        <p class="lead hero-sub">
+          Il tuo spazio di bellezza, relax e cura nel cuore di Legnano.
+          Unghie, viso, corpo e laser diodo in un ambiente riservato, dove ogni trattamento è un'opera su misura.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--fill" href="tel:+393409647398">Prenota ora</a>
+          <a class="btn btn--line" href="#servizi">I trattamenti</a>
+        </div>
+        <ul class="hero-meta">
+          <li>Lun–Sab su appuntamento</li>
+          <li>Via Renzo Bottini 7, Legnano</li>
+          <li>Consulenza gratuita</li>
+        </ul>
+      </div>
+      <figure class="hero-figure">
+        <img src="../media/img/unghie-02.jpg" alt="Mani con manicure elegante realizzata da Mebilly Beauty a Legnano" width="900" height="1125">
+        <figcaption class="hero-tag">Mambo Barber Shop · Ladies &amp; Beauty</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======= Services ======= -->
+  <section class="services" id="servizi">
+    <div class="container">
+      <div class="services-head">
+        <p class="eyebrow">Servizi — Cura. Calma. Luxe.</p>
+        <h2 class="h2">Trattamenti d'atelier</h2>
+        <p class="lead" style="margin-top:1.1rem">
+          Ogni servizio inizia dall'ascolto: pelle, unghie e viso raccontano ciò di cui hai bisogno.
+          Ecco i rituali più amati in salone.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.5 20.5v-8a4.5 4.5 0 0 1 9 0v8"/>
+              <path d="M4.5 20.5h15"/>
+              <path d="M12 6.2V4.8"/>
+            </svg>
+          </div>
+          <h3>Manicure</h3>
+          <p class="card-keys">Cura delle cuticole · Limatura perfetta · Smalto</p>
+          <p class="card-meta"><strong>€15</strong> · 30 min</p>
+          <a class="card-link" href="tel:+393409647398">
+            Prenota
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3.5l1.7 4.9 4.9 1.7-4.9 1.7L12 16.7l-1.7-4.9-4.9-1.7 4.9-1.7L12 3.5z"/>
+              <path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/>
+            </svg>
+          </div>
+          <h3>Semi-permanente</h3>
+          <p class="card-keys">Brillantezza · Lunga tenuta · Finitura lucida</p>
+          <p class="card-meta"><strong>€33</strong> · 45 min</p>
+          <a class="card-link" href="tel:+393409647398">
+            Prenota
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 4h10l4 5.5L12 20 3 9.5 7 4z"/>
+              <path d="M3 9.5h18"/>
+              <path d="M9.5 9.5L12 20l2.5-10.5"/>
+              <path d="M7 4l2.5 5.5M17 4l-2.5 5.5"/>
+            </svg>
+          </div>
+          <h3>Ricostruzione gel</h3>
+          <p class="card-keys">Allungamento · Forma su misura · Resistenza</p>
+          <p class="card-meta"><strong>€55</strong> · 90 min</p>
+          <a class="card-link" href="tel:+393409647398">
+            Prenota
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      </div>
+
+      <!-- Mini listino -->
+      <div class="prices">
+        <div class="prices-body">
+          <div class="prices-intro">
+            <p class="eyebrow">Listino — Prezzi trasparenti</p>
+            <h3 class="h2" style="font-size:clamp(1.6rem,1.2rem + 1.8vw,2.3rem)">Tutto il menù di salone</h3>
+          </div>
+          <div class="price-cols">
+            <ul>
+              <li class="price-row"><span class="p-name">Ricostruzione acrygel</span><span class="p-dots"></span><span class="p-val">€70</span></li>
+              <li class="price-row"><span class="p-name">Pedicure completo</span><span class="p-dots"></span><span class="p-val">€37</span></li>
+              <li class="price-row"><span class="p-name">Pulizia viso</span><span class="p-dots"></span><span class="p-val">€50</span></li>
+              <li class="price-row"><span class="p-name">Laminazione ciglia</span><span class="p-dots"></span><span class="p-val">€50</span></li>
+            </ul>
+            <ul>
+              <li class="price-row"><span class="p-name">Laser diodo 808nm</span><span class="p-dots"></span><span class="p-val">da €15</span></li>
+              <li class="price-row"><span class="p-name">Massaggio total body relax</span><span class="p-dots"></span><span class="p-val">€60</span></li>
+              <li class="price-row"><span class="p-name">Trucco sposa</span><span class="p-dots"></span><span class="p-val">da €150</span></li>
+              <li class="price-row"><span class="p-name">Nail art</span><span class="p-dots"></span><span class="p-val">da €2</span></li>
+            </ul>
+          </div>
+          <p class="price-note">Consulenze gratuite e pacchetti personalizzati in salone</p>
+        </div>
+        <div class="prices-photos">
+          <img src="../media/img/unghie-07.jpg" alt="Nail art con decorazione elegante" width="600" height="800" loading="lazy">
+          <img src="../media/img/unghie-28.jpg" alt="Ricostruzione unghie in gel con french manicure" width="600" height="800" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Laser banner ======= -->
+  <section class="laser" id="laser">
+    <div class="container laser-inner">
+      <p class="eyebrow">Novità in salone</p>
+      <h2>Epilazione <em>Laser Diodo</em> 808&nbsp;nm</h2>
+      <p>
+        Pelle liscia, ogni giorno. Il laser diodo 808nm è il metodo più evoluto per ridurre
+        progressivamente i peli di viso e corpo, in sicurezza e con massimo comfort — anche sulle pelli sensibili.
+        <strong style="font-weight:500">Prima consulenza gratuita.</strong>
+      </p>
+      <span class="laser-price">a partire da <strong>€15</strong></span>
+      <div class="laser-actions">
+        <a class="btn btn--ghost" href="https://wa.me/393409647398" target="_blank" rel="noopener">Prenota su WhatsApp</a>
+        <a class="btn btn--ghost" href="tel:+393409647398">+39 340 964 7398</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Philosophy ======= -->
+  <section class="philosophy" id="chi-siamo">
+    <div class="container philo-grid">
+      <figure class="philo-figure">
+        <img src="../media/img/unghie-15.jpg" alt="Dettaglio di mani curate nel salone Mebilly Beauty" width="800" height="1000" loading="lazy">
+      </figure>
+      <div class="philo-body">
+        <p class="eyebrow">La filosofia</p>
+        <blockquote class="philo-quote">
+          «Il mio lavoro è come un'<strong>opera d'arte</strong>, in continuo progresso e aggiornamento.
+          Svolgo con passione ogni singolo trattamento: la soddisfazione più grande è il sorriso
+          di chi si affida alle mie mani. Vieni in salone per consulenze gratuite e pacchetti personalizzati.
+          <strong>Ti aspetto!</strong>»
+        </blockquote>
+        <p class="philo-sign">Mebilly Beauty · La tua estetista a Legnano</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Hours ======= -->
+  <section class="hours" id="orari">
+    <div class="container">
+      <p class="eyebrow">Orari — Il tuo momento di calma</p>
+      <h2 class="h2">Quando trovarci</h2>
+      <div class="hours-grid">
+        <ul class="hours-list">
+          <li><span class="d">Lunedì</span><span class="dots"></span><span class="h closed">Chiuso</span></li>
+          <li><span class="d">Martedì</span><span class="dots"></span><span class="h">13:00 – 19:30</span></li>
+          <li><span class="d">Mercoledì</span><span class="dots"></span><span class="h">13:00 – 21:00</span></li>
+          <li><span class="d">Giovedì</span><span class="dots"></span><span class="h">11:00 – 19:30</span></li>
+          <li><span class="d">Venerdì</span><span class="dots"></span><span class="h">9:30 – 19:30</span></li>
+          <li><span class="d">Sabato</span><span class="dots"></span><span class="h">9:00 – 16:00</span></li>
+          <li><span class="d">Domenica</span><span class="dots"></span><span class="h closed">Chiuso</span></li>
+        </ul>
+        <div class="hours-aside">
+          <img src="../media/img/unghie-21.jpg" alt="Atmosfera rilassata nel centro estetico Mebilly Beauty" width="800" height="500" loading="lazy">
+          <div class="hours-note">
+            <p class="eyebrow" style="font-size:.62rem">Su appuntamento</p>
+            <p>I trattamenti sono dedicati a te, una cliente alla volta. Chiama o scrivici per riservare il tuo spazio.</p>
+            <a href="tel:+393409647398">
+              Prenota · +39 340 964 7398
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Location ======= -->
+  <section class="location" id="posizione">
+    <div class="container">
+      <p class="eyebrow">Dove siamo</p>
+      <h2 class="h2">Nel cuore di Legnano</h2>
+      <div class="loc-grid">
+        <div class="loc-info">
+          <address>
+            <p class="loc-title">Mambo Barber Shop<br>«ladies and beauty»</p>
+            <p>Via Renzo Bottini 7<br>20025 Legnano (MI)</p>
+          </address>
+          <div class="loc-links">
+            <a href="tel:+393409647398">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 16v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              +39 340 964 7398
+            </a>
+            <a href="https://wa.me/393409647398" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-16.6 4.8L3 21l4.3-1.3A9 9 0 0 1 21 12z"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1-1.5 2 1c-.5 1.5-1.5 2-3 1.5-3-1-6.5-4.5-7.5-7.5-.5-1.5 0-2.5 1.5-3l1 2L9 9.5z"/></svg>
+              Scrivici su WhatsApp
+            </a>
+            <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>
+              Instagram · @mebilly_beauty
+            </a>
+          </div>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit"
+            title="Mappa — Mambo Barber Shop ladies and beauty, Via Renzo Bottini 7, Legnano"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======= Footer ======= -->
+<footer class="site-footer" id="contatti">
+  <div class="container">
+    <p class="eyebrow">Contatti</p>
+    <p class="footer-brand">Mebilly Beauty</p>
+    <div class="footer-cta">
+      <a class="btn btn--ghost" href="tel:+393409647398">Prenota · +39 340 964 7398</a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">@mebilly_beauty</a>
+    </div>
+    <div class="footer-lines">
+      <p>Est. Legnano · Via Renzo Bottini 7 · Instagram @mebilly_beauty</p>
+      <p>© 2026 Mebilly Beauty · P. IVA 12727690963 · Centro estetico Legnano (MI)</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ======= Proposte pill ======= -->
+<a class="back-pill" href="index.html">← Proposte</a>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var panel = document.getElementById('menu-panel');
+    if (!toggle || !panel) return;
+
+    function setMenu(open) {
+      document.body.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu');
+      panel.setAttribute('aria-hidden', String(!open));
+    }
+
+    toggle.addEventListener('click', function () {
+      setMenu(!document.body.classList.contains('menu-open'));
+    });
+
+    panel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        setMenu(false);
+        toggle.focus();
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

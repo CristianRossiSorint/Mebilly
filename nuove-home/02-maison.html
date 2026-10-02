@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mebilly Beauty — centro estetico a Legnano (MI). Unghie, viso, benessere ed epilazione laser diodo 808nm. Il tuo spazio di bellezza, relax e cura, dentro Mambo Barber Shop in Via Renzo Bottini 7.">
+    <meta name="robots" content="noindex">
+    <title>Mebilly Beauty · Maison Calma</title>
+    <link rel="icon" href="../media/img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FBF9F5;
+            --ink: #26221E;
+            --muted: #7D756C;
+            --line: #E7E0D6;
+            --sand: #D8CFC2;
+            --sand-deep: #C8BAA6;
+            --white: #FFFFFF;
+            --radius: 24px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        [id] { scroll-margin-top: 84px; }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-bottom: 72px;
+        }
+
+        body.no-scroll { overflow: hidden; }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        a { color: inherit; }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding-left: clamp(1.25rem, 5vw, 2.5rem);
+            padding-right: clamp(1.25rem, 5vw, 2.5rem);
+        }
+
+        .serif { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; }
+
+        .eyebrow {
+            font-size: clamp(.66rem, 2.4vw, .74rem);
+            font-weight: 500;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ---------- header / nav ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(251, 249, 245, .92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .75rem;
+            min-height: 68px;
+        }
+
+        .brand {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(.95rem, 4.5vw, 1.25rem);
+            letter-spacing: .34em;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .brand span { font-weight: 400; letter-spacing: .22em; font-size: .8em; color: var(--muted); }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            align-items: center;
+            gap: 1.1rem;
+        }
+
+        .nav-links li + li::before {
+            content: "·";
+            margin-right: 1.1rem;
+            color: var(--sand-deep);
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink);
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover { color: var(--muted); }
+
+        .nav-actions { display: flex; align-items: center; gap: .5rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            min-height: 48px;
+            padding: .7rem 1.6rem;
+            border-radius: 999px;
+            font-family: "Montserrat", system-ui, sans-serif;
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--ink);
+            background: transparent;
+            color: var(--ink);
+        }
+
+        .btn-outline:hover { background: var(--ink); color: var(--bg); }
+
+        .btn-sand {
+            border: 1px solid var(--sand);
+            background: var(--sand);
+            color: var(--ink);
+        }
+
+        .btn-sand:hover { background: var(--sand-deep); border-color: var(--sand-deep); }
+
+        .nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .btn-small { min-height: 44px; padding: .55rem 1.15rem; }
+
+        /* pannello menu mobile */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .35rem;
+            padding: 4.5rem 1.5rem 2.5rem;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .mobile-menu.is-open { opacity: 1; visibility: visible; }
+
+        .mobile-menu a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: .35rem 1rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(1.7rem, 6.5vw, 2.3rem);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .mobile-menu a:hover { color: var(--muted); }
+
+        .mobile-menu .mm-eyebrow { margin-bottom: 1rem; }
+
+        .mobile-menu .btn { margin-top: 1.5rem; }
+
+        .mobile-menu .mm-note {
+            margin-top: 1.25rem;
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: .85rem;
+            right: clamp(1.25rem, 5vw, 2.5rem);
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--ink);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------- hero ---------- */
+        .hero { padding-top: clamp(2.75rem, 8vw, 6rem); padding-bottom: clamp(2.5rem, 7vw, 5rem); }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2.25rem, 6vw, 4rem);
+            align-items: center;
+        }
+
+        .hero .eyebrow { margin-bottom: 1.4rem; }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.85rem, 11vw, 5.6rem);
+            line-height: 1.04;
+            letter-spacing: -.01em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-sub {
+            max-width: 34rem;
+            font-size: clamp(.95rem, 2.6vw, 1.05rem);
+            color: var(--muted);
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-sub strong { color: var(--ink); font-weight: 500; }
+
+        .hero-cta { margin-top: 1.9rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+
+        .hero-dots {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: .45rem .8rem;
+            margin-top: 1.75rem;
+            font-size: .72rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .hero-dots li + li::before {
+            content: "·";
+            margin-right: .8rem;
+            color: var(--sand-deep);
+        }
+
+        .hero-figure { position: relative; }
+
+        .hero-figure img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .hero-figure figcaption {
+            margin-top: .8rem;
+            text-align: center;
+            font-size: .68rem;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ---------- striscia micro-frasi ---------- */
+        .micro-strip {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 1.15rem 0;
+            text-align: center;
+        }
+
+        .micro-strip p {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: .4rem .9rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(1.15rem, 3.6vw, 1.45rem);
+            font-weight: 500;
+        }
+
+        .micro-strip p span + span::before {
+            content: "·";
+            margin-right: .9rem;
+            color: var(--sand-deep);
+        }
+
+        /* ---------- sezioni generiche ---------- */
+        .section { padding: clamp(3.25rem, 9vw, 6rem) 0; }
+
+        .section-head { max-width: 40rem; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
+
+        .section-head .eyebrow { margin-bottom: 1.1rem; }
+
+        .section-head h2 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.1rem, 7vw, 3.4rem);
+            line-height: 1.08;
+        }
+
+        /* ---------- trattamenti ---------- */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            gap: .65rem;
+        }
+
+        .card .eyebrow { font-size: .62rem; }
+
+        .card h3 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(1.55rem, 4.5vw, 1.9rem);
+            line-height: 1.15;
+        }
+
+        .card p { font-size: .9rem; color: var(--muted); flex-grow: 1; }
+
+        .card .price {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding-top: .9rem;
+            border-top: 1px solid var(--line);
+        }
+
+        /* listino */
+        .price-list { margin-top: clamp(2rem, 6vw, 3rem); max-width: 44rem; }
+
+        .price-list .eyebrow { display: block; margin-bottom: 1.2rem; }
+
+        .list-row {
+            display: flex;
+            align-items: baseline;
+            gap: .65rem;
+            padding: .68rem 0;
+        }
+
+        .list-row + .list-row { border-top: 1px solid var(--line); }
+
+        .list-row .name { font-size: .92rem; }
+
+        .list-row .dots {
+            flex: 1;
+            border-bottom: 1px dotted var(--sand-deep);
+            transform: translateY(-5px);
+            min-width: 1.5rem;
+        }
+
+        .list-row .value {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* ---------- banner laser ---------- */
+        .laser-band {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            text-align: center;
+            padding: clamp(3rem, 9vw, 5.5rem) 0;
+        }
+
+        .laser-band .eyebrow { margin-bottom: 1.2rem; }
+
+        .laser-band h2 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.1rem, 7.5vw, 3.8rem);
+            line-height: 1.08;
+            max-width: 34rem;
+            margin: 0 auto 1rem;
+        }
+
+        .laser-band p { color: var(--muted); max-width: 32rem; margin: 0 auto; }
+
+        .laser-band .laser-price {
+            display: block;
+            margin: 1.4rem 0 1.8rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
+        }
+
+        .laser-band .btn-outline { background: transparent; }
+
+        /* ---------- filosofia ---------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+        }
+
+        .about-grid figure img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .about-text .eyebrow { margin-bottom: 1.1rem; }
+
+        .about-text h2, .where-text h2, .hours-note h2 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.1rem, 7vw, 3.2rem);
+            line-height: 1.08;
+            margin-bottom: 1.4rem;
+        }
+
+        .about-text blockquote {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(1.25rem, 3.6vw, 1.5rem);
+            line-height: 1.45;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text > p { color: var(--muted); font-size: .95rem; margin-bottom: 1rem; }
+
+        .about-sign {
+            margin-top: 1.5rem;
+            font-size: .7rem;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+
+        .about-strip {
+            margin-top: clamp(2rem, 6vw, 3rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .about-strip img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* ---------- orari ---------- */
+        .hours-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+        }
+
+        .hours-note .eyebrow { margin-bottom: 1.1rem; }
+
+        .hours-note .hours-lead { color: var(--muted); font-size: .92rem; margin: 0 0 1.5rem; max-width: 26rem; }
+
+        .hours-list { list-style: none; max-width: 30rem; width: 100%; }
+
+        .hours-list li {
+            display: flex;
+            align-items: baseline;
+            gap: .65rem;
+            padding: .72rem 0;
+        }
+
+        .hours-list li + li { border-top: 1px solid var(--line); }
+
+        .hours-list .day { font-size: .92rem; letter-spacing: .04em; }
+
+        .hours-list .dots {
+            flex: 1;
+            border-bottom: 1px dotted var(--sand-deep);
+            transform: translateY(-5px);
+            min-width: 1.5rem;
+        }
+
+        .hours-list .time { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.15rem; white-space: nowrap; }
+
+        .hours-list .closed { color: var(--muted); font-style: italic; font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.15rem; }
+
+        /* ---------- dove siamo ---------- */
+        .where-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: start;
+        }
+
+        .where-line { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: 1.1rem; }
+
+        .where-line svg { flex: none; margin-top: .25rem; color: var(--sand-deep); }
+
+        .where-line .label {
+            font-size: .66rem;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: block;
+        }
+
+        .where-line .value { font-size: .98rem; }
+
+        .where-text .btn { margin-top: 1.25rem; }
+
+        .map-frame {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .map-frame iframe {
+            display: block;
+            width: 100%;
+            height: clamp(300px, 60vw, 420px);
+            border: 0;
+        }
+
+        /* ---------- footer ---------- */
+        .site-footer {
+            border-top: 1px solid var(--line);
+            padding: clamp(2.75rem, 8vw, 4.5rem) 0 2rem;
+            text-align: center;
+        }
+
+        .footer-tag {
+            font-size: clamp(.68rem, 2.4vw, .78rem);
+            font-weight: 500;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            margin-bottom: clamp(1.75rem, 5vw, 2.5rem);
+        }
+
+        .footer-contacts {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .35rem;
+            margin-bottom: clamp(1.75rem, 5vw, 2.5rem);
+        }
+
+        .footer-contacts a {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            min-height: 44px;
+            font-size: .82rem;
+            letter-spacing: .1em;
+            text-decoration: none;
+        }
+
+        .footer-contacts a:hover { color: var(--muted); }
+
+        .footer-contacts svg { color: var(--sand-deep); flex: none; }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .45rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            font-size: .64rem;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        .footer-nav a:hover { color: var(--ink); }
+
+        .footer-nav li + li::before {
+            content: "·";
+            margin-right: 1rem;
+            color: var(--sand-deep);
+        }
+
+        .copyright {
+            font-size: .72rem;
+            color: var(--muted);
+            letter-spacing: .08em;
+        }
+
+        /* ---------- pillola proposte ---------- */
+        .back-pill {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 90;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: .55rem 1.15rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(38, 34, 30, .08);
+        }
+
+        .back-pill:hover { border-color: var(--sand-deep); }
+
+        /* ---------- breakpoint ---------- */
+        @media (min-width: 640px) {
+            .cards { grid-template-columns: repeat(2, 1fr); }
+            .about-strip { grid-template-columns: repeat(3, 1fr); }
+            .hours-wrap { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (min-width: 960px) {
+            .nav-toggle { display: none; }
+            .mobile-menu { display: none; }
+
+            .nav-bar { justify-content: space-between; gap: 1.5rem; }
+            .nav-links { display: flex; gap: 1.25rem; }
+            .nav-links li + li::before { margin-right: 1.25rem; }
+
+            .hero-grid { grid-template-columns: 1.05fr .95fr; }
+            .cards { grid-template-columns: repeat(4, 1fr); }
+            .about-grid { grid-template-columns: .92fr 1.08fr; }
+            .hours-wrap { grid-template-columns: .85fr 1.15fr; align-items: start; }
+            .where-grid { grid-template-columns: .9fr 1.1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="wrap nav-bar">
+            <a class="brand" href="#top">Mebilly <span>Beauty</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#posizione">Dove siamo</a></li>
+                <li><a href="#orari">Orari</a></li>
+                <li><a href="../approfondimenti.html">Approfondimenti</a></li>
+                <li><a href="../galleria.html">Galleria</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a class="btn btn-outline btn-small" href="tel:+393409647398">Prenota</a>
+                <button class="nav-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                        <line x1="4" y1="8" x2="20" y2="8"></line>
+                        <line x1="4" y1="16" x2="20" y2="16"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu principale">
+        <button class="menu-close" type="button" aria-label="Chiudi il menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <line x1="5" y1="5" x2="19" y2="19"></line>
+                <line x1="19" y1="5" x2="5" y2="19"></line>
+            </svg>
+        </button>
+        <p class="eyebrow mm-eyebrow">Mebilly Beauty · Legnano</p>
+        <a href="#posizione">Dove siamo</a>
+        <a href="#orari">Orari</a>
+        <a href="../approfondimenti.html">Approfondimenti</a>
+        <a href="../galleria.html">Galleria</a>
+        <a href="#contatti">Contatti</a>
+        <a class="btn btn-sand" href="tel:+393409647398">Prenota ora</a>
+        <a class="mm-note" href="tel:+393409647398">+39 340 964 7398</a>
+    </nav>
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero wrap">
+            <div class="hero-grid">
+                <div>
+                    <p class="eyebrow">Centro estetico · Unghie · Viso · Benessere</p>
+                    <h1>la tua bellezza, custodita nei dettagli,</h1>
+                    <p class="hero-sub"><strong>Il tuo spazio di bellezza, relax e cura a Legnano.</strong></p>
+                    <p class="hero-sub">Unghie, viso, corpo e laser diodo 808&nbsp;nm: trattamenti su misura dentro Mambo Barber Shop, in Via Renzo Bottini&nbsp;7.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-sand" href="#trattamenti">Scopri i trattamenti</a>
+                        <a class="btn btn-outline" href="tel:+393409647398">Prenota</a>
+                    </div>
+                    <ul class="hero-dots">
+                        <li>Consulenze gratuite in salone</li>
+                        <li>Pacchetti personalizzati</li>
+                        <li>Prodotti professionali</li>
+                    </ul>
+                </div>
+                <figure class="hero-figure">
+                    <img src="../media/img/unghie-07.jpg" alt="Manicure realizzata da Mebilly Beauty a Legnano" width="900" height="1125">
+                    <figcaption>Unghie · Mebilly Beauty</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- MICRO-FRASI -->
+        <div class="micro-strip">
+            <div class="wrap">
+                <p><span>Consulenza gratuita</span><span>Trattamenti su misura</span><span>Prodotti di qualità</span></p>
+            </div>
+        </div>
+
+        <!-- TRATTAMENTI -->
+        <section class="section wrap" id="trattamenti">
+            <div class="section-head">
+                <p class="eyebrow">I trattamenti</p>
+                <h2>Rituali essenziali, risultati su misura,</h2>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <p class="eyebrow">Mani</p>
+                    <h3>Semi-permanente</h3>
+                    <p>Colore intenso e brillantezza a lunga durata, per mani curate e impeccabili fino a tre settimane.</p>
+                    <p class="price">€33</p>
+                </article>
+                <article class="card">
+                    <p class="eyebrow">Unghie</p>
+                    <h3>Ricostruzione gel</h3>
+                    <p>Allungamento e struttura in gel per una forma elegante e naturale, unghia dopo unghia.</p>
+                    <p class="price">€55</p>
+                </article>
+                <article class="card">
+                    <p class="eyebrow">Viso</p>
+                    <h3>Pulizia viso</h3>
+                    <p>Un rituale di purificazione profonda che restituisce luminosità, freschezza e morbidezza alla pelle.</p>
+                    <p class="price">€50</p>
+                </article>
+                <article class="card">
+                    <p class="eyebrow">Sguardo</p>
+                    <h3>Laminazione ciglia</h3>
+                    <p>Ciglia incurvate, folte e definite per settimane, con o senza mascara. Sguardo aperto, naturale.</p>
+                    <p class="price">€50</p>
+                </article>
+            </div>
+
+            <div class="price-list">
+                <span class="eyebrow">Listino</span>
+                <div class="list-row">
+                    <span class="name">Manicure</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">€15</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Ricostruzione acrygel</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">€70</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Pedicure completo</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">€37</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Massaggio total body relax</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">€60</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Trucco sposa</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">da €150</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Epilazione laser diodo 808</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">da €15</span>
+                </div>
+                <div class="list-row">
+                    <span class="name">Nail art</span>
+                    <span class="dots" aria-hidden="true"></span>
+                    <span class="value">da €2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER LASER -->
+        <section class="laser-band" id="laser">
+            <div class="wrap">
+                <p class="eyebrow">Novità in salone</p>
+                <h2>Epilazione Laser Diodo 808nm</h2>
+                <p>Pelle liscia, ogni giorno. Una tecnologia sicura e progressiva, adatta a ogni fototipo, per un risultato duraturo anche sulle pelli più sensibili.</p>
+                <span class="laser-price">Prima consulenza gratuita · a partire da €15</span>
+                <a class="btn btn-outline" href="tel:+393409647398">Prenota la consulenza</a>
+            </div>
+        </section>
+
+        <!-- FILOSOFIA -->
+        <section class="section wrap" id="filosofia">
+            <div class="about-grid">
+                <figure>
+                    <img src="../media/img/unghie-15.jpg" alt="Dettaglio di un trattamento unghie in salone" width="820" height="1025" loading="lazy">
+                </figure>
+                <div class="about-text">
+                    <p class="eyebrow">La nostra filosofia</p>
+                    <h2>Un lavoro come un'opera d'arte,</h2>
+                    <blockquote>«Il mio lavoro è come un'opera d'arte, in continuo progresso e aggiornamento. Svolgo con passione ogni singolo trattamento: la soddisfazione più grande è il sorriso di chi si affida alle mie mani.»</blockquote>
+                    <p>Vieni in salone per consulenze gratuite e pacchetti personalizzati: ogni percorso di bellezza inizia ascoltando le tue esigenze. Ti aspetto!</p>
+                    <p class="about-sign">— Mebilly Beauty · Legnano</p>
+                </div>
+            </div>
+            <div class="about-strip">
+                <img src="../media/img/unghie-02.jpg" alt="Nail art realizzata presso Mebilly Beauty" width="640" height="480" loading="lazy">
+                <img src="../media/img/unghie-21.jpg" alt="Ricostruzione unghie in gel" width="640" height="480" loading="lazy">
+                <img src="../media/img/unghie-28.jpg" alt="Semi-permanente colore nude" width="640" height="480" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ORARI -->
+        <section class="section wrap" id="orari">
+            <div class="hours-wrap">
+                <div class="hours-note">
+                    <p class="eyebrow">Orari di apertura</p>
+                    <h2>Quando trovarci,</h2>
+                    <p class="hours-lead">Lavoriamo su appuntamento: scrivici su WhatsApp per riservare il tuo momento di relax.</p>
+                    <a class="btn btn-sand" href="https://wa.me/393409647398">Scrivici su WhatsApp</a>
+                </div>
+                <ul class="hours-list">
+                    <li><span class="day">Lunedì</span><span class="dots" aria-hidden="true"></span><span class="closed">Chiuso</span></li>
+                    <li><span class="day">Martedì</span><span class="dots" aria-hidden="true"></span><span class="time">13:00–19:30</span></li>
+                    <li><span class="day">Mercoledì</span><span class="dots" aria-hidden="true"></span><span class="time">13:00–21:00</span></li>
+                    <li><span class="day">Giovedì</span><span class="dots" aria-hidden="true"></span><span class="time">11:00–19:30</span></li>
+                    <li><span class="day">Venerdì</span><span class="dots" aria-hidden="true"></span><span class="time">9:30–19:30</span></li>
+                    <li><span class="day">Sabato</span><span class="dots" aria-hidden="true"></span><span class="time">9:00–16:00</span></li>
+                    <li><span class="day">Domenica</span><span class="dots" aria-hidden="true"></span><span class="closed">Chiuso</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DOVE SIAMO -->
+        <section class="section wrap" id="posizione">
+            <div class="where-grid">
+                <div class="where-text">
+                    <p class="eyebrow">Dove siamo</p>
+                    <h2>In centro a Legnano,</h2>
+                    <div class="where-line">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21s-6.5-5.4-6.5-10.5a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21z"></path>
+                            <circle cx="12" cy="10.5" r="2.3"></circle>
+                        </svg>
+                        <div>
+                            <span class="label">Indirizzo</span>
+                            <span class="value">Mambo Barber Shop “ladies and beauty”<br>Via Renzo Bottini 7, 20025 Legnano (MI)</span>
+                        </div>
+                    </div>
+                    <div class="where-line">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"></path>
+                        </svg>
+                        <div>
+                            <span class="label">Telefono / WhatsApp</span>
+                            <span class="value"><a href="tel:+393409647398" style="text-decoration:none;">+39 340 964 7398</a></span>
+                        </div>
+                    </div>
+                    <div class="where-line">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <polyline points="12 7 12 12 15.5 14"></polyline>
+                        </svg>
+                        <div>
+                            <span class="label">Su appuntamento</span>
+                            <span class="value">Consigliata la prenotazione, anche last minute</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Via+Renzo+Bottini+7+Legnano" target="_blank" rel="noopener">Indicazioni stradali</a>
+                </div>
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit" title="Mappa — Mebilly Beauty, Via Renzo Bottini 7, Legnano" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contatti">
+        <div class="wrap">
+            <p class="footer-tag">Novità — Laser Diodo 808 · Prima consulenza gratuita</p>
+
+            <ul class="footer-contacts">
+                <li>
+                    <a href="tel:+393409647398">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"></path>
+                        </svg>
+                        +39 340 964 7398
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/393409647398" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"></path>
+                        </svg>
+                        WhatsApp diretto
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"></circle>
+                        </svg>
+                        @mebilly_beauty
+                    </a>
+                </li>
+                <li>
+                    <span style="display:inline-flex; align-items:center; gap:.6rem; min-height:44px; font-size:.82rem; letter-spacing:.1em;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21s-6.5-5.4-6.5-10.5a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21z"></path>
+                            <circle cx="12" cy="10.5" r="2.3"></circle>
+                        </svg>
+                        Via Renzo Bottini 7, Legnano (MI)
+                    </span>
+                </li>
+            </ul>
+
+            <ul class="footer-nav">
+                <li><a href="#posizione">Dove siamo</a></li>
+                <li><a href="#orari">Orari</a></li>
+                <li><a href="../approfondimenti.html">Approfondimenti</a></li>
+                <li><a href="../galleria.html">Galleria</a></li>
+                <li><a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+
+            <p class="copyright">© 2026 Mebilly Beauty · P. IVA 12727690963 · Legnano (MI)</p>
+        </div>
+    </footer>
+
+    <a class="back-pill" href="index.html">← Proposte</a>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var menu = document.querySelector('#mobile-menu');
+            var close = menu.querySelector('.menu-close');
+
+            function setMenu(open) {
+                menu.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                document.body.classList.toggle('no-scroll', open);
+            }
+
+            toggle.addEventListener('click', function () {
+                setMenu(!menu.classList.contains('is-open'));
+            });
+
+            close.addEventListener('click', function () {
+                setMenu(false);
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenu(false);
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+                    setMenu(false);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

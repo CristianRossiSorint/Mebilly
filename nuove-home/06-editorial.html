@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mebilly Beauty — centro estetico a Legnano (MI), dentro Mambo Barber Shop «ladies and beauty», Via Renzo Bottini 7. Manicure, ricostruzione unghie, viso, corpo ed epilazione laser diodo 808nm. Prenota: +39 340 964 7398.">
+    <title>Mebilly Beauty · Editoriale</title>
+    <link rel="icon" type="image/jpeg" href="../media/img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #FAF8F4;
+            --ink: #1A1815;
+            --taupe: #B4A99A;
+            --taupe-soft: #E7E1D8;
+            --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+            --sans: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        a { color: inherit; }
+
+        .wrap {
+            max-width: 1140px;
+            margin-inline: auto;
+            padding-inline: clamp(1rem, 4vw, 2.5rem);
+        }
+
+        section { scroll-margin-top: 4.5rem; }
+
+        .kicker {
+            font-family: var(--sans);
+            font-size: clamp(0.66rem, 0.6rem + 0.3vw, 0.78rem);
+            font-weight: 500;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+        }
+
+        .kicker--taupe { color: var(--taupe); }
+
+        /* ============ MASTHEAD ============ */
+
+        .topline {
+            position: sticky;
+            top: 0;
+            z-index: 160;
+            background: var(--paper);
+            border-bottom: 1px solid var(--ink);
+        }
+
+        .topline-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 52px;
+        }
+
+        .topline-date {
+            font-size: clamp(0.62rem, 0.58rem + 0.3vw, 0.75rem);
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .topline-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-prenota {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.55rem 1.25rem;
+            background: var(--ink);
+            color: var(--paper);
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .btn-prenota:hover { background: var(--paper); color: var(--ink); }
+
+        .menu-toggle {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 7px;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: none;
+            border: 1px solid var(--ink);
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 1.5px;
+            background: var(--ink);
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(4.25px) rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
+
+        .masthead {
+            border-bottom: 4px double var(--ink);
+        }
+
+        .brand {
+            font-family: var(--serif);
+            font-weight: 800;
+            font-size: clamp(3.1rem, 15vw, 10rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            text-align: center;
+            text-transform: uppercase;
+            padding-top: clamp(1.5rem, 5vw, 3rem);
+        }
+
+        .brand-sub {
+            text-align: center;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(0.95rem, 2.6vw, 1.35rem);
+            color: var(--ink);
+            padding: clamp(0.4rem, 1.5vw, 0.9rem) 1rem clamp(1.1rem, 3vw, 1.8rem);
+        }
+
+        .mainnav { display: none; border-top: 3px solid var(--ink); }
+
+        .mainnav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            min-height: 56px;
+        }
+
+        .mainnav ul {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mainnav ul a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            font-size: clamp(0.66rem, 0.6rem + 0.3vw, 0.78rem);
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .mainnav ul a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 8px;
+            width: 0;
+            height: 1px;
+            background: var(--ink);
+            transition: width 0.25s ease;
+        }
+
+        .mainnav ul a:hover::after { width: 100%; }
+
+        .mainnav .sep { color: var(--taupe); font-size: 0.8rem; }
+
+        .mainnav-date {
+            font-size: clamp(0.62rem, 0.58rem + 0.3vw, 0.75rem);
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ============ MOBILE MENU ============ */
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 250;
+            background: var(--paper);
+            display: flex;
+            flex-direction: column;
+            padding: clamp(1.25rem, 5vw, 2rem) clamp(1.25rem, 5vw, 2.5rem);
+            transform: translateY(-100%);
+            visibility: hidden;
+            transition: transform 0.35s ease, visibility 0.35s;
+        }
+
+        .mobile-menu.open { transform: translateY(0); visibility: visible; }
+
+        .mobile-menu-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--ink);
+            padding-bottom: 1rem;
+        }
+
+        .mobile-menu-head .brand-mini {
+            font-family: var(--serif);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+        }
+
+        .mobile-menu-close {
+            width: 44px;
+            height: 44px;
+            background: none;
+            border: 1px solid var(--ink);
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            margin-top: clamp(1.5rem, 6vw, 3rem);
+        }
+
+        .mobile-menu nav a {
+            font-family: var(--serif);
+            font-size: clamp(1.7rem, 7.5vw, 2.6rem);
+            font-weight: 600;
+            text-decoration: none;
+            padding: clamp(0.65rem, 2.5vw, 1rem) 0;
+            border-bottom: 1px solid var(--taupe-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .mobile-menu nav a small {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        .mobile-menu .btn-prenota { margin-top: clamp(1.5rem, 5vw, 2.25rem); align-self: flex-start; }
+
+        .mobile-menu-foot {
+            margin-top: auto;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        body.menu-locked { overflow: hidden; }
+
+        /* ============ HERO ============ */
+
+        .hero { border-bottom: 1px solid var(--ink); }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(1.75rem, 5vw, 3.5rem);
+            padding-block: clamp(2.5rem, 7vw, 5rem);
+        }
+
+        .hero-issue {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            border-top: 1px solid var(--ink);
+            padding-top: 0.9rem;
+        }
+
+        .hero-number {
+            font-family: var(--serif);
+            font-weight: 800;
+            font-size: clamp(3.2rem, 16vw, 7.5rem);
+            line-height: 0.85;
+            color: var(--taupe);
+        }
+
+        .hero h2 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(2.1rem, 8vw, 4.6rem);
+            line-height: 1.08;
+            margin-top: clamp(1.25rem, 4vw, 2rem);
+        }
+
+        .hero h2 em { font-style: italic; font-weight: 600; }
+
+        .hero-lead {
+            max-width: 34rem;
+            margin-top: clamp(1.25rem, 3vw, 1.75rem);
+            font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: clamp(1.5rem, 4vw, 2.25rem);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.7rem 1.6rem;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .btn--solid { background: var(--ink); color: var(--paper); }
+        .btn--solid:hover { background: var(--paper); color: var(--ink); }
+        .btn--ghost { background: transparent; color: var(--ink); }
+        .btn--ghost:hover { background: var(--ink); color: var(--paper); }
+
+        .hero-figure { margin: 0; }
+
+        .hero-figure .frame {
+            border: 1px solid var(--ink);
+            padding: clamp(0.5rem, 2vw, 0.85rem);
+            background: var(--paper);
+        }
+
+        .hero-figure img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+        }
+
+        .hero-figure figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--taupe);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        /* ============ MARQUEE ============ */
+
+        .marquee {
+            background: var(--ink);
+            color: var(--paper);
+            overflow: hidden;
+            border-bottom: 1px solid var(--ink);
+            padding-block: 0.85rem;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 26s linear infinite;
+        }
+
+        .marquee-group {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-family: var(--sans);
+            font-size: clamp(0.8rem, 2.4vw, 1rem);
+            font-weight: 500;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+        }
+
+        .marquee-group span { padding-inline: 1.4rem; }
+        .marquee-group i { font-style: normal; color: var(--taupe); }
+
+        @keyframes marquee-scroll {
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ============ SECTION HEADERS ============ */
+
+        .sec-head {
+            display: flex;
+            align-items: flex-end;
+            gap: clamp(1rem, 3vw, 2rem);
+            border-bottom: 3px solid var(--ink);
+            padding-bottom: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        .sec-num {
+            font-family: var(--serif);
+            font-weight: 800;
+            font-size: clamp(2.6rem, 9vw, 5.5rem);
+            line-height: 0.85;
+            color: var(--taupe);
+        }
+
+        .sec-head h2 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(1.7rem, 5.5vw, 3rem);
+            line-height: 1.1;
+            margin-top: 0.35rem;
+        }
+
+        .sec-head h2 em { font-style: italic; font-weight: 600; }
+
+        /* ============ SERVIZI (INDICE) ============ */
+
+        .services { padding-block: clamp(3rem, 8vw, 6rem); }
+
+        .index-rows { margin-top: clamp(1.5rem, 4vw, 2.5rem); border-top: 1px solid var(--ink); }
+
+        .index-row {
+            display: flex;
+            align-items: baseline;
+            gap: clamp(0.75rem, 2.5vw, 1.5rem);
+            padding: clamp(1rem, 3vw, 1.4rem) clamp(0.4rem, 1.5vw, 1rem);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .index-row:hover { background: var(--ink); color: var(--paper); }
+        .index-row:hover .idx-price { color: var(--taupe); }
+        .index-row:hover .idx-num { color: var(--taupe); }
+
+        .idx-num {
+            font-family: var(--sans);
+            font-size: clamp(0.72rem, 2vw, 0.85rem);
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--taupe);
+            min-width: 2.2em;
+        }
+
+        .idx-name {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(1.35rem, 4.6vw, 2.4rem);
+            line-height: 1.15;
+        }
+
+        .idx-dots {
+            flex: 1;
+            min-width: 1.5rem;
+            border-bottom: 2px dotted var(--taupe);
+            transform: translateY(-0.35em);
+        }
+
+        .idx-price {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(1.1rem, 3.4vw, 1.7rem);
+            white-space: nowrap;
+        }
+
+        .listino {
+            margin-top: clamp(2.5rem, 6vw, 4rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0 clamp(2rem, 6vw, 4rem);
+        }
+
+        .listino-title {
+            grid-column: 1 / -1;
+            font-family: var(--sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--taupe);
+            border-bottom: 1px solid var(--taupe-soft);
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .listino-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--taupe-soft);
+        }
+
+        .listino-row .l-name { font-size: clamp(0.95rem, 2.6vw, 1.05rem); }
+        .listino-row .l-dots { flex: 1; min-width: 1.25rem; border-bottom: 1px dotted var(--taupe); transform: translateY(-0.3em); }
+        .listino-row .l-price { font-weight: 600; white-space: nowrap; font-size: 0.95rem; }
+
+        .services-note {
+            margin-top: clamp(2rem, 5vw, 3rem);
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1rem, 2.8vw, 1.2rem);
+            color: var(--taupe);
+        }
+
+        /* ============ AD: LASER DIODO ============ */
+
+        .ad-band { padding-block: clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--ink); }
+
+        .ad {
+            position: relative;
+            max-width: 640px;
+            margin-inline: auto;
+            border: 1px solid var(--ink);
+            background: var(--paper);
+            text-align: center;
+            padding: clamp(2.2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 3rem);
+        }
+
+        .ad::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid var(--ink);
+            pointer-events: none;
+        }
+
+        .ad-label {
+            position: absolute;
+            top: -0.62em;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--paper);
+            padding: 0 1rem;
+            font-size: 0.64rem;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .ad h3 {
+            font-family: var(--serif);
+            font-weight: 800;
+            font-size: clamp(1.6rem, 5.5vw, 2.6rem);
+            line-height: 1.12;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .ad h3 em { text-transform: none; font-style: italic; font-weight: 600; }
+
+        .ad .ad-payoff {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.1rem, 3.4vw, 1.5rem);
+            margin-top: 0.9rem;
+        }
+
+        .ad .ad-price {
+            margin-top: 1.1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        .ad .btn { margin-top: 1.6rem; position: relative; }
+
+        .ad-foot {
+            margin-top: 1.4rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ============ FILOSOFIA ============ */
+
+        .philosophy { padding-block: clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--ink); }
+
+        .philo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 5vw, 3.5rem);
+            margin-top: clamp(2rem, 5vw, 3rem);
+        }
+
+        .philo-text { max-width: 62ch; }
+
+        .philo-text p + p { margin-top: 1.1rem; }
+
+        .philo-lead {
+            font-family: var(--serif);
+            font-size: clamp(1.05rem, 3vw, 1.25rem);
+            line-height: 1.75;
+        }
+
+        .philo-lead::first-letter {
+            font-family: var(--serif);
+            font-weight: 800;
+            font-size: 4.4em;
+            line-height: 0.78;
+            float: left;
+            padding: 0.06em 0.14em 0 0;
+        }
+
+        .philo-sign {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.2rem, 3.4vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+
+        .philo-cta { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+        .philo-figure { margin: 0; }
+
+        .philo-figure .frame {
+            border: 1px solid var(--ink);
+            padding: clamp(0.5rem, 2vw, 0.75rem);
+        }
+
+        .philo-figure img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .philo-figure figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ============ ORARI ============ */
+
+        .hours { padding-block: clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--ink); }
+
+        .hours-list {
+            margin-top: clamp(1.75rem, 5vw, 2.75rem);
+            border-top: 3px solid var(--ink);
+        }
+
+        .hours-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: clamp(0.85rem, 2.6vw, 1.15rem) 0;
+            border-bottom: 1px solid var(--ink);
+        }
+
+        .hours-day {
+            font-size: clamp(0.78rem, 2.4vw, 0.95rem);
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .hours-time {
+            font-family: var(--serif);
+            font-size: clamp(1.05rem, 3.2vw, 1.4rem);
+            white-space: nowrap;
+        }
+
+        .hours-time.closed { font-style: italic; color: var(--taupe); }
+
+        .hours-note {
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ============ DOVE SIAMO ============ */
+
+        .location { padding-block: clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--ink); }
+
+        .loc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(2rem, 5vw, 3.5rem);
+            margin-top: clamp(2rem, 5vw, 3rem);
+        }
+
+        .loc-block + .loc-block { margin-top: 1.75rem; }
+
+        .loc-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--taupe);
+            border-bottom: 1px solid var(--taupe-soft);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .loc-block p, .loc-block a.loc-link {
+            font-size: clamp(1rem, 2.8vw, 1.12rem);
+        }
+
+        .loc-block a.loc-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink);
+        }
+
+        .loc-name {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.15rem, 3.4vw, 1.45rem);
+        }
+
+        .map-frame {
+            border: 1px solid var(--ink);
+            padding: clamp(0.5rem, 2vw, 0.75rem);
+            background: var(--paper);
+        }
+
+        .map-frame iframe {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            border: 0;
+        }
+
+        .map-frame figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ============ FOOTER / COLOPHON ============ */
+
+        .footer {
+            border-top: 3px solid var(--ink);
+            background: var(--ink);
+            color: var(--paper);
+            padding-block: clamp(3rem, 8vw, 5rem) clamp(6rem, 12vw, 7rem);
+        }
+
+        .footer .kicker { color: var(--taupe); }
+
+        .colophon {
+            text-align: center;
+            margin-top: 1.25rem;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.05rem, 3.4vw, 1.5rem);
+            line-height: 1.5;
+        }
+
+        .footer-contacts {
+            margin-top: clamp(2rem, 6vw, 3rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            text-align: center;
+        }
+
+        .footer-contacts .fc-label {
+            font-size: 0.64rem;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-contacts a, .footer-contacts .fc-value {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            font-family: var(--serif);
+            font-size: clamp(1.1rem, 3.6vw, 1.4rem);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.25s ease;
+        }
+
+        .footer-contacts a:hover { border-color: var(--paper); }
+
+        .footer-bottom {
+            margin-top: clamp(2.5rem, 7vw, 4rem);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(250, 248, 244, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.75rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--taupe);
+        }
+
+        /* ============ PILLOLA PROPOSTE ============ */
+
+        .pill-proposte {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 300;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0.55rem 1.15rem;
+            background: var(--paper);
+            color: var(--ink);
+            border: 1px solid var(--ink);
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(26, 24, 21, 0.18);
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .pill-proposte:hover { background: var(--ink); color: var(--paper); }
+
+        /* ============ BREAKPOINTS ============ */
+
+        @media (min-width: 640px) {
+            .listino { grid-template-columns: 1fr 1fr; }
+            .philo-text { column-count: 1; }
+        }
+
+        @media (min-width: 960px) {
+            .mainnav { display: block; }
+            .menu-toggle { display: none; }
+            .topline { position: static; }
+            .topline-inner { min-height: 40px; }
+            .topline-actions .btn-prenota { display: none; }
+
+            .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: end; }
+
+            .philo-grid { grid-template-columns: 1.5fr 1fr; align-items: start; }
+            .philo-text { column-count: 2; column-gap: 2.25rem; max-width: none; }
+            .philo-text p { break-inside: avoid; }
+            .philo-lead::first-letter { padding-right: 0.12em; }
+
+            .loc-grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+
+            .footer-contacts { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Testata giornale -->
+    <header>
+        <div class="topline">
+            <div class="wrap topline-inner">
+                <span class="topline-date">Legnano — Edizione 2026</span>
+                <div class="topline-actions">
+                    <a class="btn-prenota" href="tel:+393409647398">Prenota</a>
+                    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Apri il menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="masthead">
+            <h1 class="brand">Mebilly</h1>
+            <p class="brand-sub">Beauty — il tuo spazio di bellezza, relax e cura a Legnano</p>
+            <nav class="mainnav" aria-label="Navigazione principale">
+                <div class="wrap mainnav-inner">
+                    <span class="mainnav-date">Legnano — MMXXVI</span>
+                    <ul>
+                        <li><a href="#posizione">Dove siamo</a></li>
+                        <li class="sep" aria-hidden="true">|</li>
+                        <li><a href="#orari">Orari</a></li>
+                        <li class="sep" aria-hidden="true">|</li>
+                        <li><a href="../approfondimenti.html">Approfondimenti</a></li>
+                        <li class="sep" aria-hidden="true">|</li>
+                        <li><a href="../galleria.html">Galleria</a></li>
+                        <li class="sep" aria-hidden="true">|</li>
+                        <li><a href="#contatti">Contatti</a></li>
+                    </ul>
+                    <a class="btn-prenota" href="tel:+393409647398">Prenota</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-head">
+            <span class="brand-mini">Mebilly</span>
+            <button class="mobile-menu-close" id="menu-close" aria-label="Chiudi il menu">&times;</button>
+        </div>
+        <nav aria-label="Navigazione mobile">
+            <a href="#posizione">Dove siamo <small>N°05</small></a>
+            <a href="#orari">Orari <small>N°04</small></a>
+            <a href="../approfondimenti.html">Approfondimenti <small>Extra</small></a>
+            <a href="../galleria.html">Galleria <small>Extra</small></a>
+            <a href="#contatti">Contatti <small>N°06</small></a>
+        </nav>
+        <a class="btn-prenota" href="tel:+393409647398">Prenota — 340 964 7398</a>
+        <p class="mobile-menu-foot">Legnano — Edizione 2026 · Beauty &amp; cura</p>
+    </div>
+
+    <main>
+
+        <!-- Hero editoriale -->
+        <section class="hero" aria-label="Introduzione">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="hero-issue">
+                        <span class="hero-number" aria-hidden="true">01</span>
+                        <p class="kicker">N°01 — Beauty, benessere &amp; mani<br>Il giornale del salone</p>
+                    </div>
+                    <h2>La cura delle <em>mani</em>, parola di Mebilly</h2>
+                    <p class="hero-lead">Un atelier di bellezza dentro Mambo Barber Shop «ladies and beauty», nel cuore di Legnano. Unghie, viso, corpo e piccoli rituali di relax: ogni trattamento è un capolavoro su misura, firmato a mano.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn--solid" href="tel:+393409647398">Prenota ora</a>
+                        <a class="btn btn--ghost" href="https://wa.me/393409647398">Scrivici su WhatsApp</a>
+                    </div>
+                </div>
+                <figure class="hero-figure">
+                    <div class="frame">
+                        <img src="../media/img/unghie-12.jpg" alt="Mani curate con semipermanente, dettaglio da salone Mebilly Beauty" loading="eager">
+                    </div>
+                    <figcaption><span>Semipermanente in salone</span><span>Archivio Mebilly</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <div class="marquee-group">
+                    <span>Manicure</span><i>—</i><span>Viso</span><i>—</i><span>Corpo</span><i>—</i><span>Sposa</span><i>—</i><span>Laser diodo</span><i>—</i><span>Manicure</span><i>—</i><span>Viso</span><i>—</i><span>Corpo</span><i>—</i><span>Sposa</span><i>—</i><span>Laser diodo</span><i>—</i>
+                </div>
+                <div class="marquee-group">
+                    <span>Manicure</span><i>—</i><span>Viso</span><i>—</i><span>Corpo</span><i>—</i><span>Sposa</span><i>—</i><span>Laser diodo</span><i>—</i><span>Manicure</span><i>—</i><span>Viso</span><i>—</i><span>Corpo</span><i>—</i><span>Sposa</span><i>—</i><span>Laser diodo</span><i>—</i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Servizi: l'indice -->
+        <section class="services" id="servizi">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="sec-num" aria-hidden="true">02</span>
+                    <div>
+                        <p class="kicker kicker--taupe">L'indice dei trattamenti</p>
+                        <h2>Servizi in <em>prima pagina</em></h2>
+                    </div>
+                </div>
+
+                <div class="index-rows">
+                    <a class="index-row" href="tel:+393409647398">
+                        <span class="idx-num">01</span>
+                        <span class="idx-name">Manicure</span>
+                        <span class="idx-dots" aria-hidden="true"></span>
+                        <span class="idx-price">€15</span>
+                    </a>
+                    <a class="index-row" href="tel:+393409647398">
+                        <span class="idx-num">02</span>
+                        <span class="idx-name">Semi-permanente</span>
+                        <span class="idx-dots" aria-hidden="true"></span>
+                        <span class="idx-price">€33</span>
+                    </a>
+                    <a class="index-row" href="tel:+393409647398">
+                        <span class="idx-num">03</span>
+                        <span class="idx-name">Ricostruzione in gel</span>
+                        <span class="idx-dots" aria-hidden="true"></span>
+                        <span class="idx-price">€55</span>
+                    </a>
+                    <a class="index-row" href="tel:+393409647398">
+                        <span class="idx-num">04</span>
+                        <span class="idx-name">Pulizia viso</span>
+                        <span class="idx-dots" aria-hidden="true"></span>
+                        <span class="idx-price">€50</span>
+                    </a>
+                </div>
+
+                <div class="listino">
+                    <p class="listino-title">— E ancora, in corso di stampa</p>
+                    <div class="listino-row"><span class="l-name">Ricostruzione acrygel</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">€70</span></div>
+                    <div class="listino-row"><span class="l-name">Pedicure completo</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">€37</span></div>
+                    <div class="listino-row"><span class="l-name">Laminazione ciglia</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">€50</span></div>
+                    <div class="listino-row"><span class="l-name">Laser diodo 808nm</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">da €15</span></div>
+                    <div class="listino-row"><span class="l-name">Massaggio total body relax</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">€60</span></div>
+                    <div class="listino-row"><span class="l-name">Trucco sposa</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">da €150</span></div>
+                    <div class="listino-row"><span class="l-name">Nail art</span><span class="l-dots" aria-hidden="true"></span><span class="l-price">da €2</span></div>
+                </div>
+
+                <p class="services-note">Listino completo in salone — le pagine si scrivono insieme, su appuntamento.</p>
+            </div>
+        </section>
+
+        <!-- Inserzione: Laser diodo -->
+        <section class="ad-band" aria-label="Novità: epilazione laser diodo">
+            <div class="wrap">
+                <div class="ad">
+                    <span class="ad-label">Pubblicità</span>
+                    <h3>Epilazione Laser <em>Diodo 808nm</em></h3>
+                    <p class="ad-payoff">Pelle liscia, ogni giorno.</p>
+                    <p class="ad-price">Sedute da €15</p>
+                    <a class="btn btn--solid" href="tel:+393409647398">Prenota la prova</a>
+                    <p class="ad-foot">Ma di quella buona — inserzione pagata dalla tua pelle</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filosofia -->
+        <section class="philosophy" id="filosofia">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="sec-num" aria-hidden="true">03</span>
+                    <div>
+                        <p class="kicker kicker--taupe">Dalla redazione</p>
+                        <h2>La filosofia, <em>a parole della titolare</em></h2>
+                    </div>
+                </div>
+
+                <div class="philo-grid">
+                    <div class="philo-text">
+                        <p class="philo-lead">Ogni singolo trattamento è un'opera d'arte, in continuo progresso e aggiornamento: è questo il mio lavoro, e lo firmo con passione.</p>
+                        <p>Dalla manicure al trucco sposa, ogni cliente riceve attenzione vera, mani esperte e consigli sinceri. La soddisfazione più grande resta il sorriso di chi si affida alle mie mani.</p>
+                        <p>Vieni in salone: le consulenze sono gratuite e i pacchetti si scrivono su misura, come un abito buono. Ti aspetto.</p>
+                        <p class="philo-sign">— Mebilly</p>
+                        <div class="philo-cta">
+                            <a class="btn btn--ghost" href="tel:+393409647398">Richiedi una consulenza</a>
+                        </div>
+                    </div>
+                    <figure class="philo-figure">
+                        <div class="frame">
+                            <img src="../media/img/unghie-07.jpg" alt="Dettaglio di nail art realizzata presso Mebilly Beauty" loading="lazy">
+                        </div>
+                        <figcaption>Illustrazione n°2 — nail art d'archivio</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Orari -->
+        <section class="hours" id="orari">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="sec-num" aria-hidden="true">04</span>
+                    <div>
+                        <p class="kicker kicker--taupe">In edicola, quando</p>
+                        <h2>Gli orari <em>del salone</em></h2>
+                    </div>
+                </div>
+
+                <div class="hours-list">
+                    <div class="hours-row">
+                        <span class="hours-day">Lunedì</span>
+                        <span class="hours-time closed">Chiuso</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Martedì</span>
+                        <span class="hours-time">13:00 – 19:30</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Mercoledì</span>
+                        <span class="hours-time">13:00 – 21:00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Giovedì</span>
+                        <span class="hours-time">11:00 – 19:30</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Venerdì</span>
+                        <span class="hours-time">9:30 – 19:30</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Sabato</span>
+                        <span class="hours-time">9:00 – 16:00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Domenica</span>
+                        <span class="hours-time closed">Chiuso</span>
+                    </div>
+                </div>
+                <p class="hours-note">Su appuntamento · Consulenze gratuite in salone</p>
+            </div>
+        </section>
+
+        <!-- Dove siamo -->
+        <section class="location" id="posizione">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="sec-num" aria-hidden="true">05</span>
+                    <div>
+                        <p class="kicker kicker--taupe">Cronaca cittadina</p>
+                        <h2>Dove <em>trovarci</em></h2>
+                    </div>
+                </div>
+
+                <div class="loc-grid">
+                    <div>
+                        <div class="loc-block">
+                            <p class="loc-label">L'indirizzo</p>
+                            <p class="loc-name">All'interno di Mambo Barber Shop «ladies and beauty»</p>
+                            <p>Via Renzo Bottini 7<br>20025 Legnano (MI)</p>
+                        </div>
+                        <div class="loc-block">
+                            <p class="loc-label">Le linee dirette</p>
+                            <a class="loc-link" href="tel:+393409647398">+39 340 964 7398</a><br>
+                            <a class="loc-link" href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">@mebilly_beauty</a>
+                        </div>
+                    </div>
+                    <figure class="map-frame">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit" title="Mappa: Mambo Barber Shop ladies and beauty, Via Renzo Bottini 7, Legnano" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        <figcaption>La redazione, segnata sulla mappa</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Colophon -->
+    <footer class="footer" id="contatti">
+        <div class="wrap">
+            <p class="kicker" style="text-align: center;">Colophon</p>
+            <p class="colophon">Direzione e trattamenti: Mebilly Beauty — Via Renzo Bottini 7, Legnano</p>
+
+            <div class="footer-contacts">
+                <div>
+                    <p class="fc-label">Telefono / WhatsApp</p>
+                    <a href="tel:+393409647398">+39 340 964 7398</a>
+                </div>
+                <div>
+                    <p class="fc-label">Instagram</p>
+                    <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">@mebilly_beauty</a>
+                </div>
+                <div>
+                    <p class="fc-label">Partita IVA</p>
+                    <span class="fc-value">12727690963</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Mebilly Beauty — Tutti i diritti riservati</span>
+                <span>Finito di comporre a Legnano, MMXXVI</span>
+            </div>
+        </div>
+    </footer>
+
+    <a class="pill-proposte" href="index.html">&larr; Proposte</a>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            var closeBtn = document.getElementById('menu-close');
+            var panel = document.getElementById('mobile-menu');
+
+            function setMenu(open) {
+                panel.classList.toggle('open', open);
+                panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                document.body.classList.toggle('menu-locked', open);
+            }
+
+            toggle.addEventListener('click', function () {
+                setMenu(!panel.classList.contains('open'));
+            });
+            closeBtn.addEventListener('click', function () { setMenu(false); });
+            panel.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setMenu(false); });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && panel.classList.contains('open')) { setMenu(false); }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

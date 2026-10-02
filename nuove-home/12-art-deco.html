@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mebilly Beauty, centro estetico a Legnano (MI): unghie, viso, corpo ed epilazione laser diodo 808nm. Il tuo spazio di bellezza, relax e cura. Prenota la tua consulenza gratuita.">
+    <meta name="robots" content="noindex">
+    <title>Mebilly Beauty · Art Déco</title>
+    <link rel="icon" type="image/jpeg" href="../media/img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #F4EDDF;
+            --ivory-2: #FAF5E9;
+            --black: #191512;
+            --ink: #2A241E;
+            --gold: #B9924E;
+            --gold-deep: #8C6D2F;
+            --sand: #E5D9BE;
+            --font-display: "Cinzel", "Times New Roman", serif;
+            --font-body: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; overflow-x: clip; }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--ink);
+            background: var(--ivory);
+            overflow-x: clip;
+        }
+
+        ::selection { background: var(--gold); color: var(--black); }
+
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: min(1120px, 100% - 2rem);
+            margin-inline: auto;
+        }
+
+        section, footer { scroll-margin-top: 90px; }
+
+        /* ---------- Tipografia ---------- */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--black);
+        }
+
+        .sec-head {
+            text-align: center;
+            max-width: 46rem;
+            margin-inline: auto;
+        }
+
+        .sec-head h2 {
+            font-size: clamp(1.65rem, 5vw, 2.6rem);
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            margin-top: 1.1rem;
+        }
+
+        .sec-intro {
+            margin: 1.1rem auto 0;
+            max-width: 40rem;
+            color: rgba(42, 36, 30, .78);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .9rem;
+            font-size: .72rem;
+            font-weight: 500;
+            letter-spacing: .34em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        .eyebrow::before,
+        .eyebrow::after {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: var(--gold);
+            flex: none;
+        }
+
+        .filetto {
+            width: 64px;
+            height: 2px;
+            background: var(--gold);
+            margin: 1.2rem auto 0;
+            position: relative;
+        }
+
+        .filetto::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        /* ---------- Ornamenti ---------- */
+        .sunburst { display: block; }
+
+        .deco-zig {
+            height: 14px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cpath d='M0 13 L12 1 L24 13 L36 1 L48 13' fill='none' stroke='%23B9924E' stroke-width='1.2'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: 48px 14px;
+            opacity: .55;
+        }
+
+        .deco-frame {
+            border: 2px solid var(--gold);
+            padding: 6px;
+            background: var(--ivory-2);
+        }
+
+        .deco-frame-inner {
+            border: 1px solid var(--black);
+            overflow: hidden;
+        }
+
+        /* ---------- Bottoni ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            min-height: 48px;
+            padding: .8rem 1.7rem;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn-black { background: var(--black); color: var(--ivory); box-shadow: 0 10px 22px rgba(25, 21, 18, .28); }
+        .btn-black:hover { background: #2E2820; }
+
+        .btn-gold { background: var(--gold); color: var(--black); box-shadow: 0 10px 22px rgba(25, 21, 18, .3); }
+        .btn-gold:hover { background: #C8A45F; }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold-deep);
+            box-shadow: inset 0 0 0 1.5px var(--gold);
+        }
+        .btn-outline-gold:hover { background: rgba(185, 146, 78, .12); }
+
+        .btn-outline-ivory {
+            background: transparent;
+            color: var(--ivory);
+            box-shadow: inset 0 0 0 1.5px rgba(244, 237, 223, .7);
+        }
+        .btn-outline-ivory:hover { background: rgba(244, 237, 223, .12); }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(244, 237, 223, .94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(185, 146, 78, .4);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            min-height: 66px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: .7rem;
+            text-decoration: none;
+            color: var(--black);
+            min-height: 48px;
+            flex: none;
+        }
+
+        .monogram { width: 42px; height: 42px; flex: none; }
+
+        .brand-text { display: none; }
+
+        .brand-text strong {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: .98rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .brand-text small {
+            display: block;
+            font-size: .62rem;
+            font-weight: 500;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+            margin-top: .15rem;
+        }
+
+        .main-nav { display: none; }
+
+        .header-cta {
+            margin-left: auto;
+            min-height: 44px;
+            padding: .5rem 1rem;
+            font-size: .7rem;
+            letter-spacing: .18em;
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 2px;
+            border: 1px solid rgba(185, 146, 78, .7);
+            background: transparent;
+            color: var(--black);
+            cursor: pointer;
+            flex: none;
+        }
+
+        /* ---------- Pannello menu mobile ---------- */
+        .menu-panel {
+            position: fixed;
+            inset: 0;
+            z-index: 70;
+            background: var(--black);
+            display: flex;
+            flex-direction: column;
+            padding: 1rem clamp(1.25rem, 5vw, 2rem) 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .28s ease, visibility .28s ease;
+        }
+
+        .menu-panel.open { opacity: 1; visibility: visible; }
+
+        .panel-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
+        }
+
+        .panel-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: .7rem;
+        }
+
+        .panel-brand strong {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--ivory);
+        }
+
+        .panel-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 2px;
+            border: 1px solid rgba(185, 146, 78, .8);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        .panel-nav {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.6rem;
+        }
+
+        .panel-nav a {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.5rem, 6.5vw, 2.2rem);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--ivory);
+            text-decoration: none;
+            padding: .8rem 0;
+            border-bottom: 1px solid rgba(185, 146, 78, .3);
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .panel-nav a:hover { color: var(--gold); }
+
+        .panel-nav a span.num {
+            font-family: var(--font-body);
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .24em;
+            color: var(--gold);
+        }
+
+        .panel-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            padding-top: 2rem;
+        }
+
+        .panel-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem 1.4rem;
+            font-size: .78rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 223, .6);
+        }
+
+        .panel-contacts a { color: var(--gold); font-weight: 500; text-decoration: none; }
+
+        body.no-scroll { overflow: hidden; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(3rem, 7vw, 4.5rem);
+            overflow: hidden;
+        }
+
+        .hero-sun {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-sun .sunburst {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(620px, 130%);
+            opacity: .5;
+        }
+
+        .hero-inner {
+            position: relative;
+            max-width: 60rem;
+            margin-inline: auto;
+        }
+
+        .hero h1 {
+            margin-top: 1.3rem;
+            font-size: clamp(2.2rem, 9.5vw, 5rem);
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            line-height: 1.06;
+        }
+
+        .hero h1 .line-gold { color: var(--gold-deep); }
+
+        .hero .lead {
+            font-size: clamp(1rem, 2.6vw, 1.15rem);
+            color: rgba(42, 36, 30, .78);
+            max-width: 38rem;
+            margin: 1.3rem auto 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 1.3rem;
+            margin-top: 2rem;
+        }
+
+        .hero-figure {
+            max-width: 350px;
+            margin: clamp(2.4rem, 6vw, 3.4rem) auto 0;
+        }
+
+        .hero-figure img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            margin-top: .9rem;
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        /* ---------- Fascia marquee ---------- */
+        .marquee {
+            overflow: hidden;
+            background: var(--black);
+            border-block: 1px solid rgba(185, 146, 78, .5);
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 26s linear infinite;
+        }
+
+        .marquee-group {
+            display: flex;
+            align-items: center;
+            flex: none;
+        }
+
+        .marquee-group span {
+            font-size: .76rem;
+            font-weight: 500;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: .95rem 1.3rem;
+            white-space: nowrap;
+        }
+
+        .marquee-group i {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            opacity: .75;
+            flex: none;
+        }
+
+        @keyframes marquee {
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ---------- Servizi ---------- */
+        .services { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.4rem;
+            margin-top: clamp(2.2rem, 5vw, 3rem);
+        }
+
+        .card {
+            position: relative;
+            background: var(--ivory-2);
+            padding: 2.1rem 1.7rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 7px) calc(100% - 26px), calc(100% - 7px) calc(100% - 14px), calc(100% - 14px) calc(100% - 14px), calc(100% - 14px) calc(100% - 7px), calc(100% - 26px) calc(100% - 7px), calc(100% - 26px) 100%, 0 100%);
+            filter: drop-shadow(0 10px 16px rgba(25, 21, 18, .1));
+            transition: transform .25s ease;
+        }
+
+        .card:hover { transform: translateY(-4px); }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            right: 20px;
+            height: 4px;
+            background: linear-gradient(to bottom, var(--gold) 1px, transparent 1px, transparent 3px, var(--gold) 3px);
+        }
+
+        .card-roman {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            margin-top: .4rem;
+        }
+
+        .card-roman .rl {
+            width: 26px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .card-roman .num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--gold-deep);
+        }
+
+        .card h3 {
+            font-size: 1.22rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .card .tag {
+            font-size: .64rem;
+            font-weight: 500;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        .card p {
+            font-size: .93rem;
+            color: rgba(42, 36, 30, .75);
+            flex-grow: 1;
+        }
+
+        .card-foot {
+            display: flex;
+            align-items: baseline;
+            gap: .6rem;
+            border-top: 1px solid rgba(185, 146, 78, .5);
+            padding-top: .9rem;
+        }
+
+        .card-foot small {
+            font-size: .64rem;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: rgba(42, 36, 30, .6);
+        }
+
+        .card-foot .dots {
+            flex: 1;
+            min-width: 1rem;
+            border-bottom: 1px dotted var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .card-foot strong {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        /* Mini listino */
+        .listino {
+            margin-top: clamp(2.4rem, 5vw, 3rem);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            background: var(--sand);
+            padding: clamp(1.6rem, 4vw, 2.4rem) clamp(1.2rem, 4vw, 2.2rem);
+        }
+
+        .listino h3 {
+            font-size: clamp(1.3rem, 3.4vw, 1.7rem);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            text-align: center;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: .7rem;
+            padding: .5rem 0;
+        }
+
+        .price-row .name { font-weight: 400; font-size: .97rem; }
+
+        .price-row .leader {
+            flex: 1;
+            min-width: 1.4rem;
+            border-bottom: 1px dotted var(--gold-deep);
+            transform: translateY(-4px);
+        }
+
+        .price-row .price {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--black);
+            white-space: nowrap;
+        }
+
+        .listino-note {
+            margin-top: 1.2rem;
+            font-size: .82rem;
+            color: rgba(42, 36, 30, .65);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ---------- Banner laser ---------- */
+        .laser {
+            position: relative;
+            background: var(--black);
+            color: var(--ivory);
+            padding: clamp(3.5rem, 8vw, 6rem) 0;
+            overflow: hidden;
+        }
+
+        .laser-sign {
+            position: relative;
+            border: 2px solid var(--gold);
+            padding: clamp(4.6rem, 9vw, 5.2rem) clamp(1.2rem, 5vw, 3.5rem) clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            max-width: 54rem;
+            margin-inline: auto;
+        }
+
+        .laser-sign::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(185, 146, 78, .65);
+            pointer-events: none;
+        }
+
+        .laser-sun {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(480px, 92%);
+            opacity: .3;
+            pointer-events: none;
+        }
+
+        .laser-sign > *:not(.laser-sun) { position: relative; z-index: 1; }
+
+        .laser .eyebrow { color: var(--gold); }
+        .laser .eyebrow::before, .laser .eyebrow::after { background: var(--gold); }
+
+        .laser h2 {
+            color: var(--ivory);
+            font-size: clamp(1.55rem, 5.4vw, 2.7rem);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-top: 1.1rem;
+        }
+
+        .laser .banner-text {
+            margin-top: 1rem;
+            font-size: .8rem;
+            font-weight: 500;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .laser p {
+            color: rgba(244, 237, 223, .82);
+            max-width: 38rem;
+            margin: 1.2rem auto 0;
+        }
+
+        .laser-cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 1.3rem;
+            margin-top: 1.9rem;
+        }
+
+        .laser-badge {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 96px;
+            height: 96px;
+            background: var(--gold);
+            color: var(--black);
+            clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.15;
+            z-index: 2;
+        }
+
+        .laser-badge span {
+            font-size: .58rem;
+            font-weight: 500;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .laser-badge strong {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+        }
+
+        /* ---------- Filosofia ---------- */
+        .filosofia { background: var(--sand); }
+
+        .filosofia-inner {
+            max-width: 46rem;
+            margin-inline: auto;
+            text-align: center;
+            padding: clamp(3rem, 7vw, 4.5rem) 0;
+        }
+
+        .orn-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--gold-deep);
+            font-size: 1rem;
+        }
+
+        .orn-row .rl {
+            width: 44px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .filosofia blockquote {
+            margin-top: 1.6rem;
+            font-size: clamp(1.12rem, 3.2vw, 1.42rem);
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--black);
+        }
+
+        .filosofia .filosofia-sub {
+            margin-top: 1.3rem;
+            color: rgba(42, 36, 30, .75);
+        }
+
+        .firma {
+            margin-top: 1.7rem;
+            font-family: var(--font-display);
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        /* ---------- Galleria cornici ---------- */
+        .gallery { padding: clamp(3rem, 7vw, 5rem) 0; }
+
+        .frames {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.4rem;
+            margin-top: 2.2rem;
+        }
+
+        .frames figure { max-width: 340px; margin-inline: auto; width: 100%; }
+
+        .frames img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+        }
+
+        .frames figcaption {
+            margin-top: .8rem;
+            text-align: center;
+            font-size: .66rem;
+            font-weight: 500;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        /* ---------- Orari ---------- */
+        .info { padding: clamp(3.5rem, 8vw, 6rem) 0 0; }
+
+        .hours-panel {
+            max-width: 58rem;
+            margin: 2.4rem auto 0;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding: clamp(1.6rem, 4vw, 2.2rem) 0;
+        }
+
+        .hours-cols {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0 3rem;
+        }
+
+        .hrow {
+            display: flex;
+            align-items: baseline;
+            gap: .7rem;
+            padding: .55rem 0;
+        }
+
+        .hrow .day {
+            font-family: var(--font-display);
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .hrow .dots {
+            flex: 1;
+            min-width: 1rem;
+            border-bottom: 1px dotted var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .hrow .time { font-weight: 400; white-space: nowrap; }
+
+        .hrow .closed { font-style: italic; color: rgba(42, 36, 30, .55); }
+
+        .hours-note {
+            margin-top: 1.3rem;
+            text-align: center;
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        /* ---------- Dove siamo ---------- */
+        .posizione { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+        .pos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2.4rem;
+            align-items: start;
+        }
+
+        .place-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .place-addr { margin-top: .5rem; color: rgba(42, 36, 30, .75); }
+
+        .place-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+            margin-top: 1.3rem;
+        }
+
+        .place-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: .65rem;
+            min-height: 44px;
+            font-weight: 400;
+            color: var(--ink);
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .place-links a:hover { color: var(--gold-deep); }
+        .place-links svg { color: var(--gold-deep); flex: none; }
+
+        .place-note {
+            margin-top: 1.2rem;
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+        }
+
+        .map-wrap .deco-frame-inner { background: var(--sand); }
+
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        /* ---------- Footer ---------- */
+        .site-footer {
+            background: var(--black);
+            color: var(--ivory);
+            border-top: 2px solid var(--gold);
+            padding: clamp(3rem, 7vw, 4.5rem) 0 calc(5.5rem + env(safe-area-inset-bottom));
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.4rem;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: .9rem; }
+
+        .footer-brand strong {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .footer-brand small {
+            display: block;
+            font-size: .62rem;
+            font-weight: 500;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: .2rem;
+        }
+
+        .footer-payoff {
+            margin-top: 1.1rem;
+            color: rgba(244, 237, 223, .68);
+            font-size: .95rem;
+            max-width: 22rem;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; }
+
+        .footer-col a, .footer-col li span {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            min-height: 42px;
+            color: rgba(244, 237, 223, .85);
+            text-decoration: none;
+            font-size: .93rem;
+        }
+
+        .footer-col a:hover { color: var(--gold); }
+        .footer-col svg { color: var(--gold); flex: none; }
+
+        .footer-bottom {
+            margin-top: 2.6rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(185, 146, 78, .35);
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: rgba(244, 237, 223, .55);
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem 1.4rem;
+        }
+
+        /* ---------- Pillola Proposte ---------- */
+        .back-pill {
+            position: fixed;
+            right: 1rem;
+            bottom: calc(1rem + env(safe-area-inset-bottom));
+            z-index: 60;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: .5rem 1.15rem;
+            border-radius: 2px;
+            background: var(--gold);
+            color: var(--black);
+            border: 1px solid var(--black);
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 10px 22px rgba(25, 21, 18, .35);
+            transition: background-color .2s ease, transform .2s ease;
+        }
+
+        .back-pill:hover { background: #C8A45F; transform: translateY(-2px); }
+
+        /* ---------- Breakpoint ≥560px ---------- */
+        @media (min-width: 560px) {
+            .brand-text { display: block; }
+            .frames { grid-template-columns: repeat(3, 1fr); }
+            .frames figure { max-width: none; }
+        }
+
+        /* ---------- Breakpoint ≥640px ---------- */
+        @media (min-width: 640px) {
+            .hours-cols { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ---------- Breakpoint ≥880px ---------- */
+        @media (min-width: 880px) {
+            .cards { grid-template-columns: repeat(3, 1fr); }
+            .pos-grid { grid-template-columns: 1fr 1.15fr; }
+            .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+            .map-wrap iframe { height: 340px; }
+        }
+
+        /* ---------- Breakpoint ≥960px ---------- */
+        @media (min-width: 960px) {
+            .header-inner { gap: 1rem; min-height: 74px; }
+
+            .main-nav {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                margin-left: auto;
+            }
+
+            .main-nav a {
+                display: inline-flex;
+                align-items: center;
+                min-height: 44px;
+                font-size: .72rem;
+                font-weight: 500;
+                letter-spacing: .22em;
+                text-transform: uppercase;
+                color: var(--ink);
+                text-decoration: none;
+                transition: color .2s ease;
+            }
+
+            .main-nav a:hover { color: var(--gold-deep); }
+
+            .nav-toggle { display: none; }
+            .menu-panel { display: none; }
+            .header-cta { margin-left: .4rem; }
+
+            .hero-sun .sunburst { width: min(680px, 100%); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="Mebilly Beauty — torna su">
+                <svg class="monogram" viewBox="0 0 48 48" aria-hidden="true">
+                    <polygon points="15,1 33,1 47,15 47,33 33,47 15,47 1,33 1,15" fill="#191512" stroke="#B9924E" stroke-width="2"></polygon>
+                    <polygon points="17,5 31,5 43,17 43,31 31,43 17,43 5,31 5,17" fill="none" stroke="#B9924E" stroke-width="1"></polygon>
+                    <text x="24" y="31.5" text-anchor="middle" font-family="Cinzel, 'Times New Roman', serif" font-size="21" font-weight="700" fill="#B9924E">M</text>
+                </svg>
+                <span class="brand-text">
+                    <strong>Mebilly Beauty</strong>
+                    <small>Centro estetico · Legnano</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navigazione principale">
+                <a href="#posizione">Dove siamo</a>
+                <a href="#orari">Orari</a>
+                <a href="../approfondimenti.html">Approfondimenti</a>
+                <a href="../galleria.html">Galleria</a>
+                <a href="#contatti">Contatti</a>
+            </nav>
+
+            <a class="btn btn-black header-cta" href="tel:+393409647398">Prenota</a>
+
+            <button class="nav-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-panel">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h10"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Pannello menu mobile -->
+    <div class="menu-panel" id="menu-panel" aria-hidden="true">
+        <div class="panel-top">
+            <span class="panel-brand">
+                <svg class="monogram" viewBox="0 0 48 48" aria-hidden="true">
+                    <polygon points="15,1 33,1 47,15 47,33 33,47 15,47 1,33 1,15" fill="none" stroke="#B9924E" stroke-width="2"></polygon>
+                    <text x="24" y="31.5" text-anchor="middle" font-family="Cinzel, 'Times New Roman', serif" font-size="21" font-weight="700" fill="#B9924E">M</text>
+                </svg>
+                <strong>Mebilly Beauty</strong>
+            </span>
+            <button class="panel-close" type="button" aria-label="Chiudi il menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="panel-nav" aria-label="Menu">
+            <a href="#posizione">Dove siamo <span class="num">01</span></a>
+            <a href="#orari">Orari <span class="num">02</span></a>
+            <a href="../approfondimenti.html">Approfondimenti <span class="num">03</span></a>
+            <a href="../galleria.html">Galleria <span class="num">04</span></a>
+            <a href="#contatti">Contatti <span class="num">05</span></a>
+        </nav>
+
+        <div class="panel-footer">
+            <div class="deco-zig" aria-hidden="true"></div>
+            <a class="btn btn-gold" href="tel:+393409647398">Prenota il tuo rito di bellezza</a>
+            <div class="panel-contacts">
+                <a href="tel:+393409647398">+39 340 964 7398</a>
+                <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">@mebilly_beauty</a>
+                <span>Via Renzo Bottini 7, Legnano</span>
+            </div>
+        </div>
+    </div>
+
+    <main id="top">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-sun" aria-hidden="true">
+                <svg class="sunburst" viewBox="0 0 200 100">
+                    <g stroke="#B9924E" stroke-width="1" fill="none">
+                        <path d="M100 100 L10 100 M100 100 L13.1 76.7 M100 100 L22.1 55 M100 100 L36.4 36.4 M100 100 L55 22.1 M100 100 L76.7 13.1 M100 100 L100 10 M100 100 L123.3 13.1 M100 100 L145 22.1 M100 100 L163.6 36.4 M100 100 L177.9 55 M100 100 L186.9 76.7 M100 100 L190 100"></path>
+                        <path d="M10 100 A90 90 0 0 1 190 100"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="container hero-inner">
+                <p class="eyebrow">Centro estetico · Legnano (MI)</p>
+                <h1>La bellezza<br><span class="line-gold">&egrave; un rito</span></h1>
+                <div class="filetto" aria-hidden="true"></div>
+                <p class="lead">
+                    Il tuo spazio di bellezza, relax e cura nel cuore di Legnano. Unghie, viso,
+                    corpo ed epilazione laser: ogni trattamento &egrave; un rito su misura,
+                    celebrato con passione.
+                </p>
+                <div class="hero-cta">
+                    <a class="btn btn-black" href="tel:+393409647398">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path>
+                        </svg>
+                        Prenota ora
+                    </a>
+                    <a class="btn btn-outline-gold" href="#servizi">Scopri i servizi</a>
+                </div>
+
+                <div class="hero-figure">
+                    <div class="deco-frame">
+                        <div class="deco-frame-inner">
+                            <img src="../media/img/unghie-03.jpg" alt="Mani con ricostruzione unghie bronzo e oro, realizzata da Mebilly Beauty" fetchpriority="high">
+                        </div>
+                    </div>
+                    <p class="hero-caption">Consulenze gratuite · Pacchetti personalizzati</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fascia marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <div class="marquee-group">
+                    <span>Manicure</span><i></i><span>Viso</span><i></i><span>Corpo</span><i></i><span>Spa</span><i></i><span>Manicure</span><i></i><span>Viso</span><i></i><span>Corpo</span><i></i><span>Spa</span><i></i>
+                </div>
+                <div class="marquee-group">
+                    <span>Manicure</span><i></i><span>Viso</span><i></i><span>Corpo</span><i></i><span>Spa</span><i></i><span>Manicure</span><i></i><span>Viso</span><i></i><span>Corpo</span><i></i><span>Spa</span><i></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Servizi -->
+        <section class="services" id="servizi">
+            <div class="container">
+                <div class="sec-head">
+                    <p class="eyebrow">I nostri trattamenti</p>
+                    <h2>Rituali di bellezza</h2>
+                    <div class="filetto" aria-hidden="true"></div>
+                    <p class="sec-intro">
+                        Dalle mani al viso, fino al benessere del corpo: ogni rituale inizia
+                        ascoltando le tue esigenze, in un ambiente elegante e accogliente.
+                    </p>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <div class="card-roman"><span class="rl" aria-hidden="true"></span><span class="num">I</span><span class="rl" aria-hidden="true"></span></div>
+                        <h3>Semi-permanente</h3>
+                        <p class="tag">Unghie</p>
+                        <p>Colore intenso e brillantezza a lunga durata, per mani impeccabili in ogni occasione.</p>
+                        <div class="card-foot"><small>a partire da</small><span class="dots" aria-hidden="true"></span><strong>&euro;33</strong></div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-roman"><span class="rl" aria-hidden="true"></span><span class="num">II</span><span class="rl" aria-hidden="true"></span></div>
+                        <h3>Ricostruzione gel</h3>
+                        <p class="tag">Unghie</p>
+                        <p>Forma e struttura su misura, con tecniche aggiornate per un risultato elegante e resistente.</p>
+                        <div class="card-foot"><small>a partire da</small><span class="dots" aria-hidden="true"></span><strong>&euro;55</strong></div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-roman"><span class="rl" aria-hidden="true"></span><span class="num">III</span><span class="rl" aria-hidden="true"></span></div>
+                        <h3>Pulizia viso</h3>
+                        <p class="tag">Viso</p>
+                        <p>Un rituale di purificazione profonda che restituisce luminosit&agrave; e morbidezza alla pelle.</p>
+                        <div class="card-foot"><small>trattamento</small><span class="dots" aria-hidden="true"></span><strong>&euro;50</strong></div>
+                    </article>
+                </div>
+
+                <div class="listino">
+                    <h3>Listino</h3>
+                    <div class="filetto" aria-hidden="true"></div>
+                    <div style="margin-top:1.4rem">
+                        <div class="price-row"><span class="name">Manicure</span><span class="leader" aria-hidden="true"></span><span class="price">&euro;15</span></div>
+                        <div class="price-row"><span class="name">Ricostruzione acrygel</span><span class="leader" aria-hidden="true"></span><span class="price">&euro;70</span></div>
+                        <div class="price-row"><span class="name">Pedicure completo</span><span class="leader" aria-hidden="true"></span><span class="price">&euro;37</span></div>
+                        <div class="price-row"><span class="name">Laminazione ciglia</span><span class="leader" aria-hidden="true"></span><span class="price">&euro;50</span></div>
+                        <div class="price-row"><span class="name">Massaggio total body relax</span><span class="leader" aria-hidden="true"></span><span class="price">&euro;60</span></div>
+                        <div class="price-row"><span class="name">Trucco sposa</span><span class="leader" aria-hidden="true"></span><span class="price">da &euro;150</span></div>
+                        <div class="price-row"><span class="name">Nail art</span><span class="leader" aria-hidden="true"></span><span class="price">da &euro;2</span></div>
+                    </div>
+                    <p class="listino-note">Prezzi indicativi: in salone trovi consulenze gratuite e pacchetti personalizzati su misura.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Laser Diodo -->
+        <section class="laser">
+            <div class="container">
+                <div class="laser-sign">
+                    <span class="laser-badge"><span>sedute</span><strong>da &euro;15</strong></span>
+                    <svg class="laser-sun sunburst" viewBox="0 0 200 100" aria-hidden="true">
+                        <g stroke="#B9924E" stroke-width="1" fill="none">
+                            <path d="M100 100 L10 100 M100 100 L13.1 76.7 M100 100 L22.1 55 M100 100 L36.4 36.4 M100 100 L55 22.1 M100 100 L76.7 13.1 M100 100 L100 10 M100 100 L123.3 13.1 M100 100 L145 22.1 M100 100 L163.6 36.4 M100 100 L177.9 55 M100 100 L186.9 76.7 M100 100 L190 100"></path>
+                            <path d="M10 100 A90 90 0 0 1 190 100"></path>
+                        </g>
+                    </svg>
+                    <p class="eyebrow">Novit&agrave; in salone</p>
+                    <h2>Epilazione Laser Diodo 808nm</h2>
+                    <p class="banner-text">Pelle liscia, ogni giorno</p>
+                    <p>
+                        Un trattamento efficace su viso e corpo, adatto a tutti i fototipi di pelle,
+                        con percorsi personalizzati studiati su di te durante la consulenza gratuita.
+                    </p>
+                    <div class="laser-cta">
+                        <a class="btn btn-gold" href="https://wa.me/393409647398" target="_blank" rel="noopener">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path>
+                                <path d="M9 8.8c.3 2.6 3.4 5.5 6 5.9l1-1.4-2-1.1-1 .7c-.8-.4-1.7-1.2-2.1-2l.8-1-1-2-1.7.9z"></path>
+                            </svg>
+                            Prenota su WhatsApp
+                        </a>
+                        <a class="btn btn-outline-ivory" href="../approfondimenti.html">Scopri di pi&ugrave;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filosofia -->
+        <section class="filosofia">
+            <div class="deco-zig" aria-hidden="true"></div>
+            <div class="container filosofia-inner">
+                <div class="orn-row" aria-hidden="true"><span class="rl"></span>&#10070;<span class="rl"></span></div>
+                <p class="eyebrow" style="margin-top:1.4rem">La nostra filosofia</p>
+                <blockquote>
+                    &laquo;Il mio lavoro &egrave; come un'opera d'arte, in continuo progresso e
+                    aggiornamento. Svolgo con passione ogni singolo trattamento: la soddisfazione
+                    pi&ugrave; grande &egrave; il sorriso di chi si affida alle mie mani.&raquo;
+                </blockquote>
+                <p class="filosofia-sub">
+                    Vieni in salone per consulenze gratuite e pacchetti personalizzati:
+                    insieme troviamo il percorso di bellezza perfetto per te. Ti aspetto!
+                </p>
+                <p class="firma">Billy &middot; Mebilly Beauty</p>
+                <div class="orn-row" style="margin-top:1.8rem" aria-hidden="true"><span class="rl"></span>&#10070;<span class="rl"></span></div>
+            </div>
+            <div class="deco-zig" aria-hidden="true"></div>
+        </section>
+
+        <!-- Galleria cornici -->
+        <section class="gallery">
+            <div class="container">
+                <div class="sec-head">
+                    <p class="eyebrow">L'atelier in dettaglio</p>
+                    <h2>Opere d'arte su misura</h2>
+                    <div class="filetto" aria-hidden="true"></div>
+                </div>
+
+                <div class="frames">
+                    <figure>
+                        <div class="deco-frame">
+                            <div class="deco-frame-inner">
+                                <img src="../media/img/unghie-08.jpg" alt="Manicure bord&ograve; con nail art, realizzata da Mebilly Beauty" loading="lazy">
+                            </div>
+                        </div>
+                        <figcaption>Colore &amp; eleganza</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="deco-frame">
+                            <div class="deco-frame-inner">
+                                <img src="../media/img/unghie-28.jpg" alt="Ricostruzione unghie zebrate con dettagli oro" loading="lazy">
+                            </div>
+                        </div>
+                        <figcaption>Nail art su misura</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="deco-frame">
+                            <div class="deco-frame-inner">
+                                <img src="../media/img/unghie-32.jpg" alt="Unghie realizzate con smalto blu notte" loading="lazy">
+                            </div>
+                        </div>
+                        <figcaption>Stile &amp; carattere</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Orari -->
+        <section class="info" id="orari">
+            <div class="container">
+                <div class="sec-head">
+                    <p class="eyebrow">Pianifica la tua visita</p>
+                    <h2>Orari di apertura</h2>
+                    <div class="filetto" aria-hidden="true"></div>
+                </div>
+
+                <div class="hours-panel">
+                    <div class="hours-cols">
+                        <div>
+                            <div class="hrow"><span class="day">Luned&igrave;</span><span class="dots" aria-hidden="true"></span><span class="time closed">Chiuso</span></div>
+                            <div class="hrow"><span class="day">Marted&igrave;</span><span class="dots" aria-hidden="true"></span><span class="time">13:00 &ndash; 19:30</span></div>
+                            <div class="hrow"><span class="day">Mercoled&igrave;</span><span class="dots" aria-hidden="true"></span><span class="time">13:00 &ndash; 21:00</span></div>
+                            <div class="hrow"><span class="day">Gioved&igrave;</span><span class="dots" aria-hidden="true"></span><span class="time">11:00 &ndash; 19:30</span></div>
+                        </div>
+                        <div>
+                            <div class="hrow"><span class="day">Venerd&igrave;</span><span class="dots" aria-hidden="true"></span><span class="time">9:30 &ndash; 19:30</span></div>
+                            <div class="hrow"><span class="day">Sabato</span><span class="dots" aria-hidden="true"></span><span class="time">9:00 &ndash; 16:00</span></div>
+                            <div class="hrow"><span class="day">Domenica</span><span class="dots" aria-hidden="true"></span><span class="time closed">Chiuso</span></div>
+                        </div>
+                    </div>
+                    <p class="hours-note">Su appuntamento &mdash; ti consigliamo di prenotare in anticipo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dove siamo -->
+        <section class="posizione" id="posizione">
+            <div class="container">
+                <div class="sec-head">
+                    <p class="eyebrow">In centro a Legnano</p>
+                    <h2>Dove siamo</h2>
+                    <div class="filetto" aria-hidden="true"></div>
+                </div>
+
+                <div class="pos-grid">
+                    <div>
+                        <p class="place-name">Mambo Barber Shop &laquo;ladies and beauty&raquo;</p>
+                        <p class="place-addr">Via Renzo Bottini 7<br>20025 Legnano (MI)</p>
+                        <ul class="place-links">
+                            <li>
+                                <a href="tel:+393409647398">
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path>
+                                    </svg>
+                                    +39 340 964 7398
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/393409647398" target="_blank" rel="noopener">
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path>
+                                        <path d="M9 8.8c.3 2.6 3.4 5.5 6 5.9l1-1.4-2-1.1-1 .7c-.8-.4-1.7-1.2-2.1-2l.8-1-1-2-1.7.9z"></path>
+                                    </svg>
+                                    Scrivici su WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3.5" y="3.5" width="17" height="17" rx="2"></rect>
+                                        <circle cx="12" cy="12" r="3.8"></circle>
+                                        <circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"></circle>
+                                    </svg>
+                                    @mebilly_beauty
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="place-note">Consulenze gratuite &middot; Pacchetti personalizzati</p>
+                    </div>
+
+                    <div class="map-wrap deco-frame">
+                        <div class="deco-frame-inner">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.0404204025076!2d8.890317815960927!3d45.58973217910264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868de7a4373421%3A0x376aa855b311ae73!2sMambo.barbershop%2Cladies%20and%20beauty!5e0!3m2!1sit!2sit!4v1673284856227!5m2!1sit!2sit" title="Mappa: Mambo Barber Shop ladies and beauty, Via Renzo Bottini 7, Legnano" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contatti">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <svg class="monogram" viewBox="0 0 48 48" aria-hidden="true">
+                            <polygon points="15,1 33,1 47,15 47,33 33,47 15,47 1,33 1,15" fill="none" stroke="#B9924E" stroke-width="2"></polygon>
+                            <text x="24" y="31.5" text-anchor="middle" font-family="Cinzel, 'Times New Roman', serif" font-size="21" font-weight="700" fill="#B9924E">M</text>
+                        </svg>
+                        <div>
+                            <strong>Mebilly Beauty</strong>
+                            <small>Centro estetico · Legnano</small>
+                        </div>
+                    </div>
+                    <p class="footer-payoff">
+                        Il tuo spazio di bellezza, relax e cura a Legnano. Ogni trattamento
+                        &egrave; un piccolo rito su misura, ogni giorno.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li>
+                            <a href="tel:+393409647398">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path>
+                                </svg>
+                                +39 340 964 7398
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/393409647398" target="_blank" rel="noopener">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path>
+                                    <path d="M9 8.8c.3 2.6 3.4 5.5 6 5.9l1-1.4-2-1.1-1 .7c-.8-.4-1.7-1.2-2.1-2l.8-1-1-2-1.7.9z"></path>
+                                </svg>
+                                WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/mebilly_beauty/" target="_blank" rel="noopener">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3.5" y="3.5" width="17" height="17" rx="2"></rect>
+                                    <circle cx="12" cy="12" r="3.8"></circle>
+                                    <circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"></circle>
+                                </svg>
+                                @mebilly_beauty
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Il salone</h4>
+                    <ul>
+                        <li>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 0 1 13 0c0 4.6-6.5 10-6.5 10z"></path>
+                                    <circle cx="12" cy="10.8" r="2.3"></circle>
+                                </svg>
+                                Via Renzo Bottini 7, 20025 Legnano (MI)
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#orari">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8.5"></circle>
+                                    <path d="M12 7.5V12l3 2"></path>
+                                </svg>
+                                Mar &ndash; Sab, su appuntamento
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Mebilly Beauty</span>
+                <span>P. IVA 12727690963</span>
+                <span>Via Renzo Bottini 7, 20025 Legnano (MI)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pillola Proposte -->
+    <a class="back-pill" href="index.html">&larr; Proposte</a>
+
+    <script>
+        (function () {
+            var panel = document.getElementById('menu-panel');
+            var openBtn = document.querySelector('.nav-toggle');
+            var closeBtn = document.querySelector('.panel-close');
+
+            function setMenu(open) {
+                panel.classList.toggle('open', open);
+                panel.setAttribute('aria-hidden', String(!open));
+                openBtn.setAttribute('aria-expanded', String(open));
+                document.body.classList.toggle('no-scroll', open);
+            }
+
+            openBtn.addEventListener('click', function () {
+                setMenu(true);
+            });
+
+            closeBtn.addEventListener('click', function () {
+                setMenu(false);
+            });
+
+            panel.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenu(false);
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && panel.classList.contains('open')) {
+                    setMenu(false);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

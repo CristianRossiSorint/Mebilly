@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Mebilly Beauty — Proposte per la nuova home</title>
+    <style>
+        :root {
+            --bg: #FBF9F6;
+            --ink: #2E2925;
+            --muted: #8A7E7B;
+            --line: #E8E0D8;
+            --accent: #C99CA1;
+            --card: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem) 4rem;
+        }
+
+        header { text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+
+        .eyebrow {
+            font-size: .72rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 500;
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        header p { max-width: 46rem; margin: 0 auto; color: var(--muted); font-size: .98rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+            gap: 1.25rem;
+        }
+
+        h2.series {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 500;
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
+            text-align: center;
+            margin: 3.5rem 0 1.75rem;
+            padding-top: 2.25rem;
+            border-top: 1px solid var(--line);
+            color: var(--ink);
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 1.5rem 1.4rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: .55rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(62, 47, 40, .10); }
+
+        .num {
+            font-family: Georgia, serif;
+            font-size: .8rem;
+            letter-spacing: .2em;
+            color: var(--accent);
+        }
+
+        .card h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        .card p { font-size: .88rem; color: var(--muted); flex-grow: 1; }
+
+        .chips { display: flex; gap: .4rem; margin-top: .25rem; }
+
+        .chip {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, .12);
+            flex: none;
+        }
+
+        .open {
+            margin-top: .6rem;
+            font-size: .82rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            border-top: 1px solid var(--line);
+            padding-top: .8rem;
+        }
+
+        .card:hover .open { color: var(--accent); }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: .8rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <p class="eyebrow">Anteprime temporanee · 2026</p>
+            <h1>Venti proposte per la nuova home page</h1>
+            <p>
+                Ogni scheda apre una home page completa e autonoma, con i contenuti reali di
+                Mebilly Beauty. Tutte sono responsive: per valutarle da mobile puoi restringere la
+                finestra del browser oppure aprire la pagina dal telefono.
+            </p>
+        </header>
+
+        <main class="grid">
+            <a class="card" href="01-atelier.html">
+                <span class="num">PROPOSTA 01</span>
+                <h2>Atelier Crema</h2>
+                <p>Minimal luxury in stile atelier milanese: crema e tortora, testate serif maiuscole, hero diviso in due, card dei trattamenti.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F5F0E8"></span>
+                    <span class="chip" style="background:#3A322C"></span>
+                    <span class="chip" style="background:#A49384"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="02-maison.html">
+                <span class="num">PROPOSTA 02</span>
+                <h2>Maison Calma</h2>
+                <p>Wellness essenziale su bianco caldo: titolo serif enorme, bottoni a pillola, separatori a puntini, banner finale a lettere distanziate.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FBF9F5"></span>
+                    <span class="chip" style="background:#26221E"></span>
+                    <span class="chip" style="background:#D8CFC2"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="03-parisienne.html">
+                <span class="num">PROPOSTA 03</span>
+                <h2>Parisienne</h2>
+                <p>Stile parigino rosa cipria con la palette ufficiale: titoli corsivi eleganti, listino con puntini di guida, recensioni e bottone WhatsApp.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#EED6D3"></span>
+                    <span class="chip" style="background:#C99CA1"></span>
+                    <span class="chip" style="background:#7A6F6B"></span>
+                    <span class="chip" style="background:#FFFBF9"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="04-botanica.html">
+                <span class="num">PROPOSTA 04</span>
+                <h2>Botanica Spa</h2>
+                <p>Atmosfera spa con salvia e crema: card molto arrotondate, ombre morbide, decorazioni botaniche, tono “rituale di benessere”.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F3F1EA"></span>
+                    <span class="chip" style="background:#7D8471"></span>
+                    <span class="chip" style="background:#3F4436"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="05-nero-oro.html">
+                <span class="num">PROPOSTA 05</span>
+                <h2>Nero &amp; Oro</h2>
+                <p>Lusso serale su fondo antracite: caratteri serif monumentali, filetti dorati, immagini con velo scuro, forte effetto scenografico.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#161311"></span>
+                    <span class="chip" style="background:#E9E2D6"></span>
+                    <span class="chip" style="background:#C6A15B"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="06-editorial.html">
+                <span class="num">PROPOSTA 06</span>
+                <h2>Editoriale</h2>
+                <p>Griglia da rivista di moda: numeri oversize, colonne asimmetriche, filetti neri, ampio uso della pagina come “pagine di giornale”.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FAF8F4"></span>
+                    <span class="chip" style="background:#1A1815"></span>
+                    <span class="chip" style="background:#B4A99A"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="07-soft-glam.html">
+                <span class="num">PROPOSTA 07</span>
+                <h2>Soft Glam</h2>
+                <p>Glam morbido in rosa cipria e sfumati: card fluttuanti, angoli arrotondati, bagliori delicati, stile “beauty lounge” contemporaneo.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FFF7F5"></span>
+                    <span class="chip" style="background:#EFC9C4"></span>
+                    <span class="chip" style="background:#4A3B3B"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="08-essenziale.html">
+                <span class="num">PROPOSTA 08</span>
+                <h2>Essenziale</h2>
+                <p>Minimalismo radicale: bianco, un solo accento tortora, micro-etichette maiuscole, tantissimo spazio vuoto, sezioni numerate.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FFFFFF"></span>
+                    <span class="chip" style="background:#111111"></span>
+                    <span class="chip" style="background:#B4A99A"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="09-vintage.html">
+                <span class="num">PROPOSTA 09</span>
+                <h2>Salotto Vintage</h2>
+                <p>Retrò da salotto italiano: crema, bordeaux e oro, doppi filetti decorativi, ornamenti, cornici alle immagini, feeling “di tradizione”.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F7F1E3"></span>
+                    <span class="chip" style="background:#6E3B3B"></span>
+                    <span class="chip" style="background:#B08D57"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="10-terracotta.html">
+                <span class="num">PROPOSTA 10</span>
+                <h2>Terracotta</h2>
+                <p>Calore moderno in terracotta e sabbia: collage di immagini, forme generose, barra fissa su mobile per prenotare via WhatsApp.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F6EDE4"></span>
+                    <span class="chip" style="background:#C0765A"></span>
+                    <span class="chip" style="background:#3E2F28"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+        </main>
+
+        <h2 class="series">Seconda serie — direzioni in più</h2>
+
+        <section class="grid">
+            <a class="card" href="11-nordico.html">
+                <span class="num">PROPOSTA 11</span>
+                <h2>Nordico</h2>
+                <p>Luce scandinava: bianco perla e blu polvere, superfici piatte con bordi sottili, ampiezza e silenzio visivo.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FDFDFB"></span>
+                    <span class="chip" style="background:#3A3F44"></span>
+                    <span class="chip" style="background:#A9BACB"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="12-art-deco.html">
+                <span class="num">PROPOSTA 12</span>
+                <h2>Art Déco</h2>
+                <p>Anni ’20 sontuosi: avorio, nero e oro, monogramma ottagonale, fasce geometriche e sunburst dorati.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F4EDDF"></span>
+                    <span class="chip" style="background:#191512"></span>
+                    <span class="chip" style="background:#B9924E"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="13-bento.html">
+                <span class="num">PROPOSTA 13</span>
+                <h2>Bento</h2>
+                <p>Griglia bento da agency contemporanea: tile asimmetriche arrotondate, nero e bianco con accento lavanda.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FFFFFF"></span>
+                    <span class="chip" style="background:#101010"></span>
+                    <span class="chip" style="background:#B9A7E6"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="14-brutalist.html">
+                <span class="num">PROPOSTA 14</span>
+                <h2>Brutal</h2>
+                <p>Neo-brutalismo audace: bordi neri spessi, ombre dure, sticker ruotati, rosa shocking e giallo acceso.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FFFDF8"></span>
+                    <span class="chip" style="background:#111111"></span>
+                    <span class="chip" style="background:#FF8FB2"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="15-lilla.html">
+                <span class="num">PROPOSTA 15</span>
+                <h2>Lilla Onirico</h2>
+                <p>Sogno lilla: sfumati aurora, card di vetro, stelline e divider a costellazione, atmosfera magica e morbida.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F6F2FB"></span>
+                    <span class="chip" style="background:#8E7CC3"></span>
+                    <span class="chip" style="background:#43394F"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="16-oceano.html">
+                <span class="num">PROPOSTA 16</span>
+                <h2>Oceano</h2>
+                <p>Spa marina: blu profondo e sabbia, onde come motivo grafico, fresco e rigenerante.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F4EFE7"></span>
+                    <span class="chip" style="background:#1F4450"></span>
+                    <span class="chip" style="background:#7FB3BF"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="17-boutique.html">
+                <span class="num">PROPOSTA 17</span>
+                <h2>Boutique</h2>
+                <p>Lusso da boutique hotel: bordeaux intenso, crema e oro rosa, pattern damascato sottile, monogramma.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#6E2B3A"></span>
+                    <span class="chip" style="background:#F6EFE4"></span>
+                    <span class="chip" style="background:#C9A27A"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="18-fotografico.html">
+                <span class="num">PROPOSTA 18</span>
+                <h2>Bianco &amp; Nero</h2>
+                <p>Portfolio fotografico: immagini in bianco e nero a tutto campo, sans nitida, un solo accento rosso.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#FFFFFF"></span>
+                    <span class="chip" style="background:#0E0E0E"></span>
+                    <span class="chip" style="background:#D33A2C"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="19-zen.html">
+                <span class="num">PROPOSTA 19</span>
+                <h2>Zen</h2>
+                <p>Wabi-sabi: carta di riso, inchiostro sumi e sigillo vermiglio, cerchi enso, colonne strette e silenzio.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F4F1E8"></span>
+                    <span class="chip" style="background:#2B2B28"></span>
+                    <span class="chip" style="background:#B8432F"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+
+            <a class="card" href="20-madreperla.html">
+                <span class="num">PROPOSTA 20</span>
+                <h2>Madreperla</h2>
+                <p>Iridescente: superfici perlate con riflessi rosa-menta-lilla, bordi cangianti, luce beauty-tech.</p>
+                <span class="chips">
+                    <span class="chip" style="background:#F8F6F4"></span>
+                    <span class="chip" style="background:#45414B"></span>
+                    <span class="chip" style="background:#E7F0EC"></span>
+                </span>
+                <span class="open">Apri la proposta →</span>
+            </a>
+        </section>
+
+        <footer>
+            Mebilly Beauty · Via Renzo Bottini 7, Legnano (MI) · Pagine provvisorie per la scelta dello stile della home
+        </footer>
+    </div>
+</body>
+
+</html>
