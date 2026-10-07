@@ -34,7 +34,9 @@
 
   // ---------- Listino: apri la sezione indicata dal link ----------
   function openFromHash() {
-    var id = decodeURIComponent(location.hash.slice(1));
+    var id;
+    // Un hash malformato (es. "#%") non deve bloccare il resto dello script
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
     if (!id) return;
     var target = document.getElementById(id);
     if (!target) return;
@@ -99,6 +101,15 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
+      // Tieni il focus dentro la finestra mentre è aperta
+      if (e.key === 'Tab') {
+        var btns = lightbox.querySelectorAll('button');
+        var first = btns[0];
+        var last = btns[btns.length - 1];
+        if (!lightbox.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+        else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
 
     // Swipe su mobile
