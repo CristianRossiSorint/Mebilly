@@ -455,17 +455,6 @@ body.menu-open .menu-panel{transform:translateY(0);visibility:visible;transition
 .hours-list .closed{color:var(--ink-40)}
 .hours-aside{display:flex;flex-direction:column;gap:1.4rem}
 .hours-aside img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r)}
-.note{
-  background:var(--white);border:1px solid var(--line);border-radius:var(--r);
-  padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;
-}
-.note p{font-size:.9rem;color:var(--ink-60)}
-.note .eyebrow{font-size:.62rem}
-.note-link{
-  font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
-  display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
-  border-bottom:1px solid var(--taupe);
-}
 
 @media (min-width:960px){
   .hours-grid{grid-template-columns:1.1fr .9fr;gap:clamp(3rem,6vw,5.5rem);align-items:start}
